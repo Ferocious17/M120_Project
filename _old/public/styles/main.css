@@ -1,0 +1,56 @@
+/*general*/
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+html
+{
+    scroll-behavior: smooth;
+}
+
+/*header*/
+
+header
+{
+    /*display: flex;
+    justify-content: space-between;
+    align-items: center;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid black;
+    font-family: "Ubuntu", sans-serif;
+}
+
+.Logo_Circular
+{
+    /*border: 1px solid black;*/
+    /*border-radius: 50%;*/
+    width: 20%;
+}
+
+.LoginRef
+{
+    position: absolute;
+    right: 3%;
+    z-index: 1;
+}
+
+/*main*/
+
+main
+{
+    display: flex;
+    justify-content: center;
+}
+
+#form
+{
+    border: 1px solid black;
+    padding: 3%;
+    width: 50%;
+}
+
+h1
+{
+    font-family: "Ubuntu", sans-serif;
+}

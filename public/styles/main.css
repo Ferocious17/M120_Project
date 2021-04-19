@@ -1,0 +1,61 @@
+/*general*/
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+html, body
+{
+    height: 100%;
+    width: 100%;
+}
+
+*
+{
+    box-sizing: border-box;
+    font-family: "Ubuntu", sans-serif;
+}
+
+html
+{
+    scroll-behavior: smooth;
+}
+
+
+
+body
+{
+    display: flex;
+    flex-direction: column;
+}
+
+/*header*/
+
+header
+{
+    height: 26%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.LogoCircular
+{
+    transform: scale(0.4);
+}
+
+/*main*/
+
+main
+{
+    height: 55%;
+    display: flex;
+    justify-content: center;
+}
+
+footer
+{
+    height: 19%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+}

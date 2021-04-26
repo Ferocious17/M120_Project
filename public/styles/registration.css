@@ -1,0 +1,18 @@
+h1
+{
+    margin-bottom: 5%;
+}
+
+#form
+{
+    padding: 3%;
+    width: 50%;
+}
+
+#genderRadios
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}

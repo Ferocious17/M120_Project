@@ -60,14 +60,16 @@
 
         <div class="row g-2 mb-3">
           <div class="form-floating col">
-            <input type="date" class="form-control" id="fromInput">
-            <label for="fromInput">Datum</label>
+            <input type="date" class="form-control" id="dateInput">
+            <label for="dateInput">Datum</label>
           </div>
           <div class="form-floating col">
-            <input type="time" class="form-control" id="toInput">
-            <label for="toInput">Uhrzeit</label>
+            <input type="time" class="form-control" id="timeInput">
+            <label for="timeInput">Uhrzeit</label>
           </div>
-          <button id="submitButton" class="btn btn-primary">Suchen</button>
+          <div id="buttonContainer">
+            <button id="submitButton" class="btn btn-primary">Suchen</button>
+          </div>
         </div>
       </form>
     </div>
@@ -86,28 +88,48 @@
       });*/
 
       $(function () {
+        var station = '8501120';
 
-var station = '8501120';
-
-$('#fromInput').autocomplete({
-    source: function (request, response) {
-        $.get('http://transport.opendata.ch/v1/stationboard', {query: request.term, type: 'station'}, function(data) {
-            response($.map(data.stations, function(station) {
-              console.log(station.name);
+        $('#fromInput').autocomplete({
+          source: function (request, response) {
+            $.get('http://transport.opendata.ch/v1/locations', { query: request.term, type: 'station' }, function (data) {
+              response($.map(data.stations, function (station) {
+                //console.log(station.name);
                 return {
-                    label: station.name,
-                    station: station
+                  label: station.name,
+                  station: station
                 }
-            }));
-        }, 'json');
-    },
-    select: function (event, ui) {
-        station = ui.item.station.id;
-    }
-});
+              }));
+            }, 'json');
+          },
+          select: function (event, ui) {
+            station = ui.item.station.id;
+          }
+        });
 
-});
+      });
 
+      $(function () {
+        var station = '8501120';
+
+        $('#toInput').autocomplete({
+          source: function (request, response) {
+            $.get('http://transport.opendata.ch/v1/locations', { query: request.term, type: 'station' }, function (data) {
+              response($.map(data.stations, function (station) {
+                //console.log(station.name);
+                return {
+                  label: station.name,
+                  station: station
+                }
+              }));
+            }, 'json');
+          },
+          select: function (event, ui) {
+            station = ui.item.station.id;
+          }
+        });
+
+      });
     </script>
 
   </main>';

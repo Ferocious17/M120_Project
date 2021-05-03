@@ -10,8 +10,50 @@ h1
     margin-bottom: 5%;
 }
 
+ul
+{
+    /*border: 1px solid black;*/
+    background: rgb(255, 255, 255);
+    width: 20%;
+    height: 500%;
+    list-style-type: none;
+    padding: 1%;
+    overflow-y: scroll;
+}
+
+li
+{
+    text-align: left;
+    padding: 1.5%;
+}
+
+li:hover
+{
+    color: blue;
+    cursor: pointer;
+}
+
+.ui-state-focus
+{
+    border: 3px solid rgb(48, 48, 184);
+    color: blue;
+}
+
 #form
 {
     padding: 3%;
     width: 50%;
+}
+
+#buttonContainer
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#submitButton
+{
+    margin-top: 2%;
+    width: 100%;
 }

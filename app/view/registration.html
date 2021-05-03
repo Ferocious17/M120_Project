@@ -35,37 +35,105 @@
         <div id="form">
             <h1>Registrieren</h1>
 
-            <form>
-                <div class="row g-2 mb-3">
-                    <div class="form-floating col-md">
-                        <input type="email" class="form-control" id="emailInput" placeholder="Vorname">
-                        <label for="fromInput">Vorname</label>
+            <div id="personalData">
+                <h3>Personalien</h3>
+
+                <form>
+                    <div class="row g-2 mb-3">
+                        <div class="form-floating col-md">
+                            <input type="text" class="form-control" id="firstnameInput" placeholder="Vorname" required>
+                            <label for="firstnameInput">Vorname</label>
+                        </div>
+
+                        <div class="form-floating col-md">
+                            <input type="text" class="form-control" id="lastnameInput" placeholder="Nachname" required>
+                            <label for="lastnameInput">Nachname</label>
+                        </div>
                     </div>
 
-                    <div class="form-floating col-md">
-                        <input type="password" class="form-control" id="passwordInput" placeholder="Nachname">
-                        <label for="toInput">Nachname</label>
-                    </div>
-                </div>
+                    <div class="row g-2 mb-3">
+                        <div class="form-floating col-md">
+                            <input type="date" class="form-control" id="birthdateInput" placeholder="Geburtsdatum" required>
+                            <label for="birthdateInput">Geburtsdatum</label>
+                        </div>
 
-                <div class="row g-2 mb-3">
-                    <div class="form-floating col-md">
-                        <input type="date" class="form-control" id="emailInput" placeholder="Vorname">
-                        <label for="fromInput">Geburtsdatum</label>
+                        <div class="form-floating col-md" id="genderRadios">
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="maleRadio" name="customRadioInline1"
+                                    class="custom-control-input" required>
+                                <label class="custom-control-label" for="maleRadio">Männlich</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="femaleRadio" name="customRadioInline1"
+                                    class="custom-control-input" required>
+                                <label class="custom-control-label" for="femaleRadio">Weiblich</label>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+
+            <div id="address">
+                <h3>Adresse</h3>
+
+                <form>
+                    <div class="row g-2 mb-3">
+                        <div class="form-floating col-md">
+                            <input type="text" class="form-control" id="streetInput" placeholder="Strasse" required>
+                            <label for="streetInput">Strasse</label>
+                        </div>
+
+                        <div class="form-floating col-md">
+                            <input type="text" class="form-control" id="houseNumberInput" placeholder="Hausnummer" required>
+                            <label for="houseNumberInput">Hausnummer</label>
+                        </div>
                     </div>
 
-                    <div class="form-floating col-md" id="genderRadios">
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
-                            <label class="custom-control-label" for="customRadioInline1">Männlich</label>
-                          </div>
-                          <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
-                            <label class="custom-control-label" for="customRadioInline2">Weiblich</label>
-                          </div>
+                    <div class="row g-2 mb-3">
+                        <div class="form-floating col-md">
+                            <input type="text" class="form-control" id="placeInput" placeholder="Ort" required>
+                            <label for="placeInput">Ort</label>
+                        </div>
+
+                        <div class="form-floating col-md">
+                            <input type="text" class="form-control" id="postalCodeInput" placeholder="PLZ" required>
+                            <label for="postalCodeInput">PLZ</label>
+                        </div>
                     </div>
-                    <button type="submit" class="btn btn-primary" id="registerButton">Registrieren</button>
-                </div>
+            </div>
+
+            <div id="credentials">
+                <h3>Account-Daten</h3>
+
+                <form>
+                    <div class="row g-2 mb-3">
+                        <div class="form-floating col-md">
+                            <input type="email" class="form-control" id="emailInput" placeholder="E-Mail" required>
+                            <label for="emailInput">E-Mail</label>
+                        </div>
+
+                        <div class="form-floating col-md">
+                            <input type="tel" pattern="[0-9]{3}[0-9]{3}[0-9]{2}[0-9]{2}" class="form-control" id="phonenumber" placeholder="Telefonnummer" required>
+                            <label for="phonenumber">Telefonnummer</label>
+                        </div>
+                    </div>
+
+                    <div class="row g-2 mb-3">
+                        <div class="form-floating col-md">
+                            <input type="password" class="form-control" id="passwordInput" placeholder="Passwort" required>
+                            <label for="passwordInput">Passwort</label>
+                        </div>
+
+                        <div class="form-floating col-md">
+                            <input type="password" class="form-control" id="confirmPasswortInput" placeholder="Passwort" required>
+                            <label for="confirmPasswortInput">Passwort bestätigen</label>
+                        </div>
+                    </div>
+
+                    <div class="g-2 mb-3">
+                        <a href="login.html" class="btn btn-primary">Abbrechen</a>
+                        <button type="submit" class="btn btn-primary" id="registerButton">Registrieren</button>
+                    </div>
+            </div>
 
             </form>
         </div>

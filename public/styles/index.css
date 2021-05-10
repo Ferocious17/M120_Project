@@ -25,6 +25,7 @@ li
 {
     text-align: left;
     padding: 1.5%;
+    transition: 0.005s ease-in;
 }
 
 li:hover

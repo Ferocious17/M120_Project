@@ -1,6 +1,22 @@
+html, body
+{
+    height: auto;
+}
+
+header
+{
+    border-bottom: 1px solid black;
+    height: 60%;
+}
+
 h1
 {
     margin-bottom: 5%;
+}
+
+main
+{
+    height: 30%;
 }
 
 h3
@@ -36,4 +52,13 @@ h3
 #registerButton
 {
     margin-top: 6%;
+}
+
+footer
+{
+    bottom: 0;
+    height: 30%;
+    margin-top: 3%;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black
 }

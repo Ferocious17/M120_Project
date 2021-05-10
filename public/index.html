@@ -87,6 +87,7 @@
         }
       });*/
 
+      // Station search
       $(function () {
         var station = '8501120';
 
@@ -94,7 +95,6 @@
           source: function (request, response) {
             $.get('http://transport.opendata.ch/v1/locations', { query: request.term, type: 'station' }, function (data) {
               response($.map(data.stations, function (station) {
-                //console.log(station.name);
                 return {
                   label: station.name,
                   station: station
@@ -116,7 +116,6 @@
           source: function (request, response) {
             $.get('http://transport.opendata.ch/v1/locations', { query: request.term, type: 'station' }, function (data) {
               response($.map(data.stations, function (station) {
-                //console.log(station.name);
                 return {
                   label: station.name,
                   station: station
@@ -130,9 +129,17 @@
         });
 
       });
+
+      //Default value for date- and time-fields
+      var currentDate = new Date();
+      //var currentTime = currentDate.getHours() + ":" + currentDate.getMinutes();
+      var currentTime = currentDate.toISOString().substring(11, 16);
+      //format as en-CA or otherwise it won't insert the value
+      document.querySelector('#dateInput').value = new Date().toLocaleDateString('en-CA');
+      document.getElementById('timeInput').value = currentTime;
     </script>
 
-  </main>';
+  </main>
 
   <footer>
     <h4>&copy; Copyright 2021 / M120 Ticket Machine</h4>

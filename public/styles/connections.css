@@ -1,0 +1,32 @@
+html
+{
+    min-height: 100%;
+    height: auto;
+}
+
+.LoginRef
+{
+    position: absolute;
+    right: 6%;
+    z-index: 1;
+}
+
+main
+{
+    padding: 1%;
+}
+
+#connectionInfo
+{
+    height: 40%;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.table
+{
+    margin-top: 3%;
+    width: 70%;
+}

@@ -1,3 +1,15 @@
+html, body
+{
+    height: 100%;
+    width: 100%;
+}
+
+header
+{
+    justify-content: flex-start;
+    padding-left: 3%;
+}
+
 .LoginRef
 {
     position: absolute;
@@ -8,6 +20,11 @@
 h1
 {
     margin-bottom: 5%;
+}
+
+main
+{
+    align-items: flex-start;
 }
 
 ul
@@ -40,10 +57,76 @@ li:hover
     color: blue;
 }
 
+/* switch */
+/*https://proto.io/freebies/onoff/*/
+
+.onoffswitch {
+    position: relative; width: 90px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #999999; border-radius: 50px;
+}
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 34px; padding: 0; line-height: 34px;
+    font-size: 15px; color: white; 
+    font-weight: 300;
+    box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "Ab";
+    padding-left: 19px;
+    background-color: #576CE0; color: #FFFFFF;
+}
+.onoffswitch-inner:after {
+    content: "An";
+    padding-right: 19px;
+    background-color: #3C1FAD; color: #FFFFFF;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: block; width: 40px; margin: 0px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    right: 50px;
+    border: 2px solid #999999; border-radius: 50px;
+    transition: all 0.3s ease-in 0s; 
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
+}
+
+/*switch*/
+
+#timeInputs
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#timeInput
+{
+    width: 68%;
+}
+
 #form
 {
     padding: 3%;
-    width: 50%;
+    width: 48%;
 }
 
 #buttonContainer
@@ -56,5 +139,110 @@ li:hover
 #submitButton
 {
     margin-top: 2%;
-    width: 100%;
+    width: 50%;
+}
+
+#backgroundTrain
+{
+    position: absolute;
+    right: 0;
+    height: 100%;
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 2% 100%, 35% 60%);
+    z-index: 0;
+    overflow: hidden;
+}
+
+#backgroundTrain > img
+{
+    transition: transform 0.5s ease;
+    height: 100%;
+}
+
+#backgroundTrain:hover img
+{
+    transform: scale(1.1);
+}
+
+footer
+{
+    justify-content: flex-start;
+    padding-left: 3%;
+}
+
+@media only screen and (max-width: 670px)
+{
+    .LogoCircular
+    {
+        transform: scale(0.2);
+    }
+
+    h1
+    {
+        color: white;
+    }
+
+    #timeInput
+    {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 750px)
+{
+    .LogoCircular
+    {
+        transform: scale(0.3);
+    }
+
+    h1
+    {
+        color: white;
+    }
+}
+
+@media only screen and (max-width: 1350px) 
+{
+    #backgroundTrain
+    {
+        display: none;
+    }
+    
+    body
+    {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url("../assets/train.jpg");
+        background-size: cover;
+    }
+
+    header
+    {
+        padding-left: 0;
+        justify-content: center;
+    }
+
+    h1
+    {
+        color: white;
+    }
+
+    main
+    {
+        align-items: center;
+    }
+
+    #timeInput
+    {
+        width: 60%;
+    }
+
+    .onoffswitch
+    {
+        width: 80px;
+    }
+
+    footer
+    {
+        padding-left: 0;
+        justify-content: center;
+        color: white;
+    }
 }

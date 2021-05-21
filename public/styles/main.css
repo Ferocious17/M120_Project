@@ -1,6 +1,6 @@
 /*general*/
 
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap');
 
 html, body
 {
@@ -63,6 +63,11 @@ main
     align-items: center;
     flex-direction: column;
     justify-content: center;
+}
+
+input
+{
+    outline: red!important;
 }
 
 footer

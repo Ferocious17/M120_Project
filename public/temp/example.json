@@ -1,0 +1,653 @@
+{
+    "from": {
+        "station": {
+            "id": "8506131",
+            "name": "Kreuzlingen",
+            "score": null,
+            "coordinate": {
+                "type": "WGS84",
+                "x": 47.652555,
+                "y": 9.16907
+            },
+            "distance": null
+        },
+        "arrival": null,
+        "arrivalTimestamp": null,
+        "departure": "2021-05-19T16:27:00+0200",
+        "departureTimestamp": 1621434420,
+        "delay": null,
+        "platform": "3",
+        "prognosis": {
+            "platform": null,
+            "arrival": null,
+            "departure": null,
+            "capacity1st": null,
+            "capacity2nd": null
+        },
+        "realtimeAvailability": null,
+        "location": {
+            "id": "8506131",
+            "name": "Kreuzlingen",
+            "score": null,
+            "coordinate": {
+                "type": "WGS84",
+                "x": 47.652555,
+                "y": 9.16907
+            },
+            "distance": null
+        }
+    },
+    "to": {
+        "station": {
+            "id": "8506100",
+            "name": "Frauenfeld",
+            "score": null,
+            "coordinate": {
+                "type": "WGS84",
+                "x": 47.558159,
+                "y": 8.89656
+            },
+            "distance": null
+        },
+        "arrival": "2021-05-19T17:17:00+0200",
+        "arrivalTimestamp": 1621437420,
+        "departure": null,
+        "departureTimestamp": null,
+        "delay": null,
+        "platform": "3",
+        "prognosis": {
+            "platform": null,
+            "arrival": null,
+            "departure": null,
+            "capacity1st": null,
+            "capacity2nd": null
+        },
+        "realtimeAvailability": null,
+        "location": {
+            "id": "8506100",
+            "name": "Frauenfeld",
+            "score": null,
+            "coordinate": {
+                "type": "WGS84",
+                "x": 47.558159,
+                "y": 8.89656
+            },
+            "distance": null
+        }
+    },
+    "duration": "00d00:50:00",
+    "transfers": 1,
+    "service": null,
+    "products": [
+        "S14",
+        "IC 8"
+    ],
+    "capacity1st": null,
+    "capacity2nd": null,
+    "sections": [
+        {
+            "journey": {
+                "name": "023863",
+                "category": "S",
+                "subcategory": null,
+                "categoryCode": null,
+                "number": "14",
+                "operator": "THURBO",
+                "to": "Weinfelden",
+                "passList": [
+                    {
+                        "station": {
+                            "id": "8506131",
+                            "name": "Kreuzlingen",
+                            "score": null,
+                            "coordinate": {
+                                "type": "WGS84",
+                                "x": 47.652555,
+                                "y": 9.16907
+                            },
+                            "distance": null
+                        },
+                        "arrival": null,
+                        "arrivalTimestamp": null,
+                        "departure": "2021-05-19T16:27:00+0200",
+                        "departureTimestamp": 1621434420,
+                        "delay": null,
+                        "platform": "3",
+                        "prognosis": {
+                            "platform": null,
+                            "arrival": null,
+                            "departure": null,
+                            "capacity1st": null,
+                            "capacity2nd": null
+                        },
+                        "realtimeAvailability": null,
+                        "location": {
+                            "id": "8506131",
+                            "name": "Kreuzlingen",
+                            "score": null,
+                            "coordinate": {
+                                "type": "WGS84",
+                                "x": 47.652555,
+                                "y": 9.16907
+                            },
+                            "distance": null
+                        }
+                    },
+                    {
+                        "station": {
+                            "id": "8506198",
+                            "name": "Tägerwilen Dorf",
+                            "score": null,
+                            "coordinate": {
+                                "type": "WGS84",
+                                "x": 47.65372,
+                                "y": 9.139552
+                            },
+                            "distance": null
+                        },
+                        "arrival": "2021-05-19T16:29:00+0200",
+                        "arrivalTimestamp": 1621434540,
+                        "departure": "2021-05-19T16:29:00+0200",
+                        "departureTimestamp": 1621434540,
+                        "delay": null,
+                        "platform": null,
+                        "prognosis": {
+                            "platform": null,
+                            "arrival": null,
+                            "departure": null,
+                            "capacity1st": null,
+                            "capacity2nd": null
+                        },
+                        "realtimeAvailability": null,
+                        "location": {
+                            "id": "8506198",
+                            "name": "Tägerwilen Dorf",
+                            "score": null,
+                            "coordinate": {
+                                "type": "WGS84",
+                                "x": 47.65372,
+                                "y": 9.139552
+                            },
+                            "distance": null
+                        }
+                    },
+                    {
+                        "station": {
+                            "id": "8506197",
+                            "name": "Kreuzlingen Bernrain",
+                            "score": null,
+                            "coordinate": {
+                                "type": "WGS84",
+                                "x": 47.642118,
+                                "y": 9.163206
+                            },
+                            "distance": null
+                        },
+                        "arrival": "2021-05-19T16:32:00+0200",
+                        "arrivalTimestamp": 1621434720,
+                        "departure": "2021-05-19T16:32:00+0200",
+                        "departureTimestamp": 1621434720,
+                        "delay": null,
+                        "platform": null,
+                        "prognosis": {
+                            "platform": null,
+                            "arrival": null,
+                            "departure": null,
+                            "capacity1st": null,
+                            "capacity2nd": null
+                        },
+                        "realtimeAvailability": null,
+                        "location": {
+                            "id": "8506197",
+                            "name": "Kreuzlingen Bernrain",
+                            "score": null,
+                            "coordinate": {
+                                "type": "WGS84",
+                                "x": 47.642118,
+                                "y": 9.163206
+                            },
+                            "distance": null
+                        }
+                    },
+                    {
+                        "station": {
+                            "id": "8506196",
+                            "name": "Lengwil",
+                            "score": null,
+                            "coordinate": {
+                                "type": "WGS84",
+                                "x": 47.625601,
+                                "y": 9.19028
+                            },
+                            "distance": null
+                        },
+                        "arrival": "2021-05-19T16:35:00+0200",
+                        "arrivalTimestamp": 1621434900,
+                        "departure": "2021-05-19T16:35:00+0200",
+                        "departureTimestamp": 1621434900,
+                        "delay": null,
+                        "platform": null,
+                        "prognosis": {
+                            "platform": null,
+                            "arrival": null,
+                            "departure": null,
+                            "capacity1st": null,
+                            "capacity2nd": null
+                        },
+                        "realtimeAvailability": null,
+                        "location": {
+                            "id": "8506196",
+                            "name": "Lengwil",
+                            "score": null,
+                            "coordinate": {
+                                "type": "WGS84",
+                                "x": 47.625601,
+                                "y": 9.19028
+                            },
+                            "distance": null
+                        }
+                    },
+                    {
+                        "station": {
+                            "id": "8506195",
+                            "name": "Siegershausen",
+                            "score": null,
+                            "coordinate": {
+                                "type": "WGS84",
+                                "x": 47.610917,
+                                "y": 9.168258
+                            },
+                            "distance": null
+                        },
+                        "arrival": "2021-05-19T16:39:00+0200",
+                        "arrivalTimestamp": 1621435140,
+                        "departure": "2021-05-19T16:39:00+0200",
+                        "departureTimestamp": 1621435140,
+                        "delay": null,
+                        "platform": null,
+                        "prognosis": {
+                            "platform": null,
+                            "arrival": null,
+                            "departure": null,
+                            "capacity1st": null,
+                            "capacity2nd": null
+                        },
+                        "realtimeAvailability": null,
+                        "location": {
+                            "id": "8506195",
+                            "name": "Siegershausen",
+                            "score": null,
+                            "coordinate": {
+                                "type": "WGS84",
+                                "x": 47.610917,
+                                "y": 9.168258
+                            },
+                            "distance": null
+                        }
+                    },
+                    {
+                        "station": {
+                            "id": "8506194",
+                            "name": "Berg",
+                            "score": null,
+                            "coordinate": {
+                                "type": "WGS84",
+                                "x": 47.582253,
+                                "y": 9.174531
+                            },
+                            "distance": null
+                        },
+                        "arrival": "2021-05-19T16:42:00+0200",
+                        "arrivalTimestamp": 1621435320,
+                        "departure": "2021-05-19T16:43:00+0200",
+                        "departureTimestamp": 1621435380,
+                        "delay": null,
+                        "platform": null,
+                        "prognosis": {
+                            "platform": null,
+                            "arrival": null,
+                            "departure": null,
+                            "capacity1st": null,
+                            "capacity2nd": null
+                        },
+                        "realtimeAvailability": null,
+                        "location": {
+                            "id": "8506194",
+                            "name": "Berg",
+                            "score": null,
+                            "coordinate": {
+                                "type": "WGS84",
+                                "x": 47.582253,
+                                "y": 9.174531
+                            },
+                            "distance": null
+                        }
+                    },
+                    {
+                        "station": {
+                            "id": "8506193",
+                            "name": "Kehlhof",
+                            "score": null,
+                            "coordinate": {
+                                "type": "WGS84",
+                                "x": 47.572186,
+                                "y": 9.169775
+                            },
+                            "distance": null
+                        },
+                        "arrival": "2021-05-19T16:46:00+0200",
+                        "arrivalTimestamp": 1621435560,
+                        "departure": "2021-05-19T16:46:00+0200",
+                        "departureTimestamp": 1621435560,
+                        "delay": null,
+                        "platform": null,
+                        "prognosis": {
+                            "platform": null,
+                            "arrival": null,
+                            "departure": null,
+                            "capacity1st": null,
+                            "capacity2nd": null
+                        },
+                        "realtimeAvailability": null,
+                        "location": {
+                            "id": "8506193",
+                            "name": "Kehlhof",
+                            "score": null,
+                            "coordinate": {
+                                "type": "WGS84",
+                                "x": 47.572186,
+                                "y": 9.169775
+                            },
+                            "distance": null
+                        }
+                    },
+                    {
+                        "station": {
+                            "id": "8506105",
+                            "name": "Weinfelden",
+                            "score": null,
+                            "coordinate": {
+                                "type": "WGS84",
+                                "x": 47.566224,
+                                "y": 9.106367
+                            },
+                            "distance": null
+                        },
+                        "arrival": "2021-05-19T16:54:00+0200",
+                        "arrivalTimestamp": 1621436040,
+                        "departure": null,
+                        "departureTimestamp": null,
+                        "delay": null,
+                        "platform": "4AB",
+                        "prognosis": {
+                            "platform": null,
+                            "arrival": null,
+                            "departure": null,
+                            "capacity1st": null,
+                            "capacity2nd": null
+                        },
+                        "realtimeAvailability": null,
+                        "location": {
+                            "id": "8506105",
+                            "name": "Weinfelden",
+                            "score": null,
+                            "coordinate": {
+                                "type": "WGS84",
+                                "x": 47.566224,
+                                "y": 9.106367
+                            },
+                            "distance": null
+                        }
+                    }
+                ],
+                "capacity1st": null,
+                "capacity2nd": null
+            },
+            "walk": null,
+            "departure": {
+                "station": {
+                    "id": "8506131",
+                    "name": "Kreuzlingen",
+                    "score": null,
+                    "coordinate": {
+                        "type": "WGS84",
+                        "x": 47.652555,
+                        "y": 9.16907
+                    },
+                    "distance": null
+                },
+                "arrival": null,
+                "arrivalTimestamp": null,
+                "departure": "2021-05-19T16:27:00+0200",
+                "departureTimestamp": 1621434420,
+                "delay": null,
+                "platform": "3",
+                "prognosis": {
+                    "platform": null,
+                    "arrival": null,
+                    "departure": null,
+                    "capacity1st": null,
+                    "capacity2nd": null
+                },
+                "realtimeAvailability": null,
+                "location": {
+                    "id": "8506131",
+                    "name": "Kreuzlingen",
+                    "score": null,
+                    "coordinate": {
+                        "type": "WGS84",
+                        "x": 47.652555,
+                        "y": 9.16907
+                    },
+                    "distance": null
+                }
+            },
+            "arrival": {
+                "station": {
+                    "id": "8506105",
+                    "name": "Weinfelden",
+                    "score": null,
+                    "coordinate": {
+                        "type": "WGS84",
+                        "x": 47.566224,
+                        "y": 9.106367
+                    },
+                    "distance": null
+                },
+                "arrival": "2021-05-19T16:54:00+0200",
+                "arrivalTimestamp": 1621436040,
+                "departure": null,
+                "departureTimestamp": null,
+                "delay": null,
+                "platform": "4AB",
+                "prognosis": {
+                    "platform": null,
+                    "arrival": null,
+                    "departure": null,
+                    "capacity1st": null,
+                    "capacity2nd": null
+                },
+                "realtimeAvailability": null,
+                "location": {
+                    "id": "8506105",
+                    "name": "Weinfelden",
+                    "score": null,
+                    "coordinate": {
+                        "type": "WGS84",
+                        "x": 47.566224,
+                        "y": 9.106367
+                    },
+                    "distance": null
+                }
+            }
+        },
+        {
+            "journey": {
+                "name": "000828",
+                "category": "IC",
+                "subcategory": null,
+                "categoryCode": null,
+                "number": "8",
+                "operator": "SBB",
+                "to": "Brig",
+                "passList": [
+                    {
+                        "station": {
+                            "id": "8506105",
+                            "name": "Weinfelden",
+                            "score": null,
+                            "coordinate": {
+                                "type": "WGS84",
+                                "x": 47.566224,
+                                "y": 9.106367
+                            },
+                            "distance": null
+                        },
+                        "arrival": "2021-05-19T16:54:00+0200",
+                        "arrivalTimestamp": 1621436040,
+                        "departure": "2021-05-19T17:06:00+0200",
+                        "departureTimestamp": 1621436760,
+                        "delay": null,
+                        "platform": "3",
+                        "prognosis": {
+                            "platform": null,
+                            "arrival": null,
+                            "departure": null,
+                            "capacity1st": null,
+                            "capacity2nd": null
+                        },
+                        "realtimeAvailability": null,
+                        "location": {
+                            "id": "8506105",
+                            "name": "Weinfelden",
+                            "score": null,
+                            "coordinate": {
+                                "type": "WGS84",
+                                "x": 47.566224,
+                                "y": 9.106367
+                            },
+                            "distance": null
+                        }
+                    },
+                    {
+                        "station": {
+                            "id": "8506100",
+                            "name": "Frauenfeld",
+                            "score": null,
+                            "coordinate": {
+                                "type": "WGS84",
+                                "x": 47.558159,
+                                "y": 8.89656
+                            },
+                            "distance": null
+                        },
+                        "arrival": "2021-05-19T17:17:00+0200",
+                        "arrivalTimestamp": 1621437420,
+                        "departure": null,
+                        "departureTimestamp": null,
+                        "delay": null,
+                        "platform": "1",
+                        "prognosis": {
+                            "platform": null,
+                            "arrival": null,
+                            "departure": null,
+                            "capacity1st": null,
+                            "capacity2nd": null
+                        },
+                        "realtimeAvailability": null,
+                        "location": {
+                            "id": "8506100",
+                            "name": "Frauenfeld",
+                            "score": null,
+                            "coordinate": {
+                                "type": "WGS84",
+                                "x": 47.558159,
+                                "y": 8.89656
+                            },
+                            "distance": null
+                        }
+                    }
+                ],
+                "capacity1st": null,
+                "capacity2nd": null
+            },
+            "walk": null,
+            "departure": {
+                "station": {
+                    "id": "8506105",
+                    "name": "Weinfelden",
+                    "score": null,
+                    "coordinate": {
+                        "type": "WGS84",
+                        "x": 47.566224,
+                        "y": 9.106367
+                    },
+                    "distance": null
+                },
+                "arrival": "2021-05-19T16:54:00+0200",
+                "arrivalTimestamp": 1621436040,
+                "departure": "2021-05-19T17:06:00+0200",
+                "departureTimestamp": 1621436760,
+                "delay": null,
+                "platform": "3",
+                "prognosis": {
+                    "platform": null,
+                    "arrival": null,
+                    "departure": null,
+                    "capacity1st": null,
+                    "capacity2nd": null
+                },
+                "realtimeAvailability": null,
+                "location": {
+                    "id": "8506105",
+                    "name": "Weinfelden",
+                    "score": null,
+                    "coordinate": {
+                        "type": "WGS84",
+                        "x": 47.566224,
+                        "y": 9.106367
+                    },
+                    "distance": null
+                }
+            },
+            "arrival": {
+                "station": {
+                    "id": "8506100",
+                    "name": "Frauenfeld",
+                    "score": null,
+                    "coordinate": {
+                        "type": "WGS84",
+                        "x": 47.558159,
+                        "y": 8.89656
+                    },
+                    "distance": null
+                },
+                "arrival": "2021-05-19T17:17:00+0200",
+                "arrivalTimestamp": 1621437420,
+                "departure": null,
+                "departureTimestamp": null,
+                "delay": null,
+                "platform": "1",
+                "prognosis": {
+                    "platform": null,
+                    "arrival": null,
+                    "departure": null,
+                    "capacity1st": null,
+                    "capacity2nd": null
+                },
+                "realtimeAvailability": null,
+                "location": {
+                    "id": "8506100",
+                    "name": "Frauenfeld",
+                    "score": null,
+                    "coordinate": {
+                        "type": "WGS84",
+                        "x": 47.558159,
+                        "y": 8.89656
+                    },
+                    "distance": null
+                }
+            }
+        }
+    ]
+}

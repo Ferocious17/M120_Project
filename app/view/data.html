@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>M120 Ticket Machine | Verbindungen</title>
+  <title>M120 Ticket Machine | Reisedaten</title>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,7 +27,7 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="../../public/styles/main.css">
-  <link rel="stylesheet" href="../../public/styles/connections.css">
+  <link rel="stylesheet" href="../../public/styles/data.css">
 
 </head>
 
@@ -39,9 +39,9 @@
 
   <main>
     <div id="steps">
-      <a class="activeLink">1. Verbindung</a>
+      <a class="hoverableLink">1. Verbindung</a>
       <i class="fa fa-angle-right"></i>
-      <a class="disabledLink">2. Reisedaten</a>
+      <a class="activeLink">2. Reisedaten</a>
       <i class="fa fa-angle-right"></i>
       <a class="disabledLink">3. Bezahlung</a>
       <i class="fa fa-angle-right"></i>
@@ -49,7 +49,7 @@
     </div>
 
     <div id="connectionInfo">
-      <h1><span id="from"></span> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30"><path fill="none" d="M0 0h24v24H0z"/><path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"/></svg> <span id="to"></span></h1>
+      <h1><span id="from"></span> <i class="fa fa-long-arrow-right"></i> <span id="to"></span></h1>
       <h3 style="font-weight: 300;">Datum: <span id="date"></span> | <span id="departureArrivalInfo"></span>: <span id="time"></span></h3>
       <a href="../../public/index.html">Ändern</a>
     </div>
@@ -78,7 +78,7 @@
           <td></td>
           <td class="tablePlatform">Gleis {{#from}} {{platform}} {{/from}}</td>
           <!--<td class="tablePlatform">{{#to}} {{platform}} {{/to}}</td>-->
-          <td><button class="btn btn-primary" onclick="selectConnection();">Kaufen</button></td>
+          <td><button class="btn btn-primary" onclick="lol();">Kaufen</button></td>
           <td><i class="fa fa-plus-square-o rowExpander" style="color: gray;"></i></td>
         </tr>
         <tr class="hiddenRow detailRow">
@@ -92,11 +92,6 @@
   </main>
 
   <script>
-    function selectConnection()
-    {
-      window.location.href = "data.html";
-    }
-
     window.onscroll = function() { adjustHeader() };
 
     function adjustHeader()

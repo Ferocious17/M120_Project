@@ -1,0 +1,94 @@
+.hoverableLink
+{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+.hoverableLink,
+.hoverableLink:hover,
+.hoverableLink:active,
+.hoverableLink:focus
+{
+    text-decoration: none;
+}
+
+.hoverableLink:after
+{
+    content: "";
+    position: absolute;
+}
+
+.hoverableLink:after
+{
+    top: 95%;
+    height: 2px;
+    width: 0%;
+    left: 0;
+    background: #1962b4;
+    transition: 0.2s ease all 0.3s;
+}
+
+.hoverableLink:hover:after
+{
+    width: 100%;
+    transition: 0.3s ease all;
+}
+
+.activeLink
+{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+.activeLink,
+.activeLink:hover,
+.activeLink:active,
+.activeLink:focus
+{
+    text-decoration: none;
+}
+
+.activeLink:after
+{
+    content: "";
+    position: absolute;
+}
+
+.activeLink:after
+{
+    top: 95%;
+    height: 2px;
+    width: 100%;
+    left: 0;
+    background: #1962b4;
+    transition: 0.5s ease all 0.3s;
+}
+
+#steps
+{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 300;
+    width: 70%;
+    margin-bottom: 2%;
+}
+
+.activeLink
+{
+    color: #1962b4;
+}
+
+.disabledLink
+{
+    color: gray;
+    text-decoration: none;
+}
+
+.disabledLink:hover 
+{
+    color: gray;
+}

@@ -31,9 +31,13 @@
 </head>
 
 <body>
+  <div id="backgroundTrain">
+    <img src="assets/train.jpg" alt="background">
+  </div>
+
   <header>
     <img class="LogoCircular" src="assets/Logo_Circular.png" alt="Logo">
-    <a class="LoginRef" href="../app/view/login.html">Anmelden</a>
+    <a class="LoginRef btn btn-primary" href="../app/view/login.html">Anmelden</a>
   </header>
 
   <main>
@@ -43,7 +47,7 @@
       <form>
         <div class="row g-2 mb-3">
           <div class="form-floating col-md">
-            <input type="text" class="form-control is-invalid" id="fromInput" placeholder="Von">
+            <input type="text" class="form-control" id="fromInput" placeholder="Von">
             <label for="fromInput">Von</label>
             <div class="invalid-feedback">
               Bitte wählen Sie einen Ort aus
@@ -62,31 +66,37 @@
           <div class="form-floating col">
             <input type="date" class="form-control" id="dateInput">
             <label for="dateInput">Datum</label>
+            <div class="invalid-feedback">
+              Bitte wählen Sie ein Datum aus
+            </div>
           </div>
-          <div class="form-floating col">
+
+
+          <div class="form-floating col" id="timeInputs">
             <input type="time" class="form-control" id="timeInput">
             <label for="timeInput">Uhrzeit</label>
+            <div class="invalid-feedback">
+              Bitte wählen Sie eine Uhrzeit aus
+            </div>
+
+            <div class="onoffswitch">
+              <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="timeSwitch" tabindex="0"
+                checked>
+              <label class="onoffswitch-label" for="timeSwitch">
+                <span class="onoffswitch-inner"></span>
+                <span class="onoffswitch-switch"></span>
+              </label>
+            </div>
+
           </div>
           <div id="buttonContainer">
-            <button id="submitButton" class="btn btn-primary">Suchen</button>
+            <button type="button" id="submitButton" class="btn btn-primary">Suchen</button>
           </div>
         </div>
       </form>
     </div>
 
     <script>
-
-      /*const fields = document.getElementsByTagName('input');
-      const button = document.querySelector('#submitButton');
-      button.addEventListener("click", function () {
-        for (var i = 0; i < fields.length; i++) {
-          console.log(fields[i].value);
-          if (fields[i].value.length == 0) {
-            fields[i].toggle('is-invalid');
-          }
-        }
-      });*/
-
       // Station search
       $(function () {
         var station = '8501120';
@@ -132,12 +142,14 @@
 
       //Default value for date- and time-fields
       var currentDate = new Date();
-      //var currentTime = currentDate.getHours() + ":" + currentDate.getMinutes();
-      var currentTime = currentDate.toISOString().substring(11, 16);
+      var currentTime = currentDate.toLocaleTimeString();
       //format as en-CA or otherwise it won't insert the value
       document.querySelector('#dateInput').value = new Date().toLocaleDateString('en-CA');
-      document.getElementById('timeInput').value = currentTime;
+      //substring to strip the seconds
+      document.getElementById('timeInput').value = currentTime.substring(0, 5);
     </script>
+
+    <script src="../app/scripts/index.js"></script>
 
   </main>
 
@@ -146,5 +158,4 @@
   </footer>
 
 </body>
-
 </html>

@@ -1,0 +1,7 @@
+ <!--can be deleted-->
+  <template id="info">
+    <h1>{{#connections}} {{#from}} {{#station}} {{name}} {{/station}} {{/from}} ---> {{#to}} {{#station}} {{name}}
+      {{/station}} {{/to}} {{/connections}}</h1>
+    <h3>Datum: <span id="date"></span> | Abfahrt: <span id="time"></span></h3>
+    <a href="../../public/index.html"></a>
+  </template>

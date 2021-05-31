@@ -18,7 +18,15 @@ header
 
 .LogoCircular
 {
-    height: 264%;
+    /*height: 264%;*/
+    height: 100%;
+    transform: scale(2);
+}
+
+#imageLink
+{
+    height: 50%;
+    border: 1px solid black;
 }
 
 .LoginRef
@@ -129,6 +137,7 @@ td
 {
     font-size: 1.7rem;
     vertical-align: middle;
+    text-align: center;
 }
 
 .hiddenRow
@@ -139,6 +148,23 @@ td
 .detailRow
 {
     transition: all 0.3s ease;
+}
+
+#pagination
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1%;
+    width: 70%;
+}
+
+#pagination > a
+{
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-color: #1962b4;
+    color: #1962b4;
 }
 
 footer

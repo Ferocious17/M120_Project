@@ -33,7 +33,7 @@
 
 <body>
   <header>
-    <img class="LogoCircular" src="../../public/assets/Logo_Circular.png"" alt=" Logo">
+    <a id="imageLink" href="../../public/index.html"><img class="LogoCircular" src="../../public/assets/Logo_Circular.png"" alt=" Logo"></a>
     <a class="LoginRef btn btn-primary" href="login.html">Anmelden</a>
   </header>
 
@@ -60,7 +60,7 @@
           <th scope="col" style="vertical-align: middle;">Von - Bis</th>
           <th scope="col" style="vertical-align: middle;">Dauer</th>
           <th scope="col" style="vertical-align: middle;">Richtung</th>
-          <th scope="col" style="vertical-align: middle;">xy</th>
+          <th scope="col" style="vertical-align: middle;">Umsteigen</th>
           <th scope="col" style="text-align: center;">Plattform</th>
           <th scope="col"></th>
           <th scope="col"></th>
@@ -69,15 +69,19 @@
       <tbody id="tableBody"></tbody>
     </table>
 
+    <div id="pagination">
+      <a onclick="paginate(-1)" id="earlier">Frühere Verbindungen</a>
+      <a onclick="paginate(1)" id="later">Spätere Verbindungen</a>
+    </div>
+
     <template id="table">
         {{#connections}}
         <tr class="connectionRow">
           <td class="tableData"><span class="tableFromTime">{{#from}} {{departure}} {{/from}}</span> <i class="fa fa-long-arrow-right"></i> <span class="tableToTime">{{#to}} {{arrival}} {{/to}}</span></td>
           <td class="tableDuration">{{duration}}</td>
           <td>{{#sections}} {{#journey}} {{to}} {{/journey}} {{/sections}}</td>
-          <td></td>
+          <td>{{transfers}}</td>
           <td class="tablePlatform">Gleis {{#from}} {{platform}} {{/from}}</td>
-          <!--<td class="tablePlatform">{{#to}} {{platform}} {{/to}}</td>-->
           <td><button class="btn btn-primary" onclick="selectConnection();">Kaufen</button></td>
           <td><i class="fa fa-plus-square-o rowExpander" style="color: gray;"></i></td>
         </tr>
@@ -92,11 +96,6 @@
   </main>
 
   <script>
-    function selectConnection()
-    {
-      window.location.href = "data.html";
-    }
-
     window.onscroll = function() { adjustHeader() };
 
     function adjustHeader()

@@ -57,6 +57,21 @@ li:hover
     color: blue;
 }
 
+.ui-helper-hidden-accessible
+{
+    display: none!important;
+}
+
+.ui-helper-hidden-accessible > div
+{
+    display: none!important;
+}
+
+.ui-autocomplete
+{
+    height: 270%;
+}
+
 /* switch */
 /*https://proto.io/freebies/onoff/*/
 

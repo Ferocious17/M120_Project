@@ -76,10 +76,11 @@ function addRowClickEvents()
     var connectionRows = document.querySelectorAll('.connectionRow');
     var hiddenRows = document.querySelectorAll('.hiddenRow');
     var buttons = document.getElementsByClassName('rowExpander');
-    
+
     for (let i = 0; i < connectionRows.length; i++) 
     {
-        connectionRows[i].addEventListener("click", function () {
+        connectionRows[i].addEventListener("click", function () 
+        {
             if (buttons[i].classList.contains("fa-plus-square-o")) 
             {
                 buttons[i].classList.remove("fa-plus-square-o");
@@ -104,7 +105,58 @@ async function load(data)
     addRowClickEvents();
 }
 
-$.get(apiQuery, function (data) 
-{
+$.get(apiQuery, function (data) {
+    sessionStorage.setItem("page", 0);
     load(data);
 });
+
+function selectConnection(departure, from, to) 
+{
+    var isLoggedIn = sessionStorage.getItem("isLoggedIn");
+    if (isLoggedIn == null || isLoggedIn == false)
+    {
+        //show page with "continue as guest" or "log in"
+        window.location.href = "../view/tempView.html";
+        return;
+    }
+
+    sessionStorage.setItem("selectedDeparture", "");
+    sessionStorage.setItem("selectedFrom", "");
+    sessionStorage.setItem("selectedTo", "");
+
+    //window.location.href = "data.html";
+}
+
+function paginate(number)
+{
+    console.log(number);
+    var page = parseInt(sessionStorage.getItem("page")) + number;
+    console.log(page);
+    
+    if (page === 3)
+    {
+        document.querySelector("#later").style.display = "none";
+        document.querySelector("#pagination").style.justifyContent = "center";
+        return;
+    }
+    else if (page === -3)
+    {
+        document.querySelector("#earlier").style.display = "none";
+        document.querySelector("#pagination").style.justifyContent = "center";
+        return;
+    }
+
+    document.querySelector("#later").style.display = "block";
+    document.querySelector("#earlier").style.display = "block";
+    document.querySelector("#pagination").style.justifyContent = "space-between";
+
+    //page += number;
+    apiQuery = "http://transport.opendata.ch/v1/connections?transportations[]=train&from=" + from + "&to=" + to + "&date=" + date + "&time=" + time + "&isArrivalTime=" + state + "&page=" + page;
+    $.get(apiQuery, function (data) {
+        load(data);
+        console.log(data);
+        console.log(page);
+    });
+
+    sessionStorage.setItem("page", page);
+}

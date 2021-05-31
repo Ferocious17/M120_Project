@@ -1,0 +1,106 @@
+header
+{
+    justify-content: flex-start;
+    padding-left: 3%;
+}
+
+h1
+{
+    margin-bottom: 5%;
+}
+
+main
+{
+    padding-left: 3%;
+    align-items: flex-start;
+}
+
+main > div
+{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
+}
+
+#backgroundTrain
+{
+    position: absolute;
+    right: 0;
+    height: 100%;
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 2% 100%, 35% 60%);
+    z-index: 0;
+    overflow: hidden;
+}
+
+#backgroundTrain > img
+{
+    transition: transform 0.5s ease;
+    height: 100%;
+}
+
+#backgroundTrain:hover img
+{
+    transform: scale(1.1);
+}
+
+footer
+{
+    justify-content: flex-start;
+    padding-left: 3%;
+}
+
+@media only screen and (max-width: 750px)
+{
+    .LogoCircular
+    {
+        transform: scale(0.3);
+    }
+
+    h1
+    {
+        color: white;
+    }
+}
+
+@media only screen and (max-width: 1200px) 
+{
+    #backgroundTrain
+    {
+        display: none;
+    }
+    
+    body
+    {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url("../assets/train.jpg");
+        background-size: cover;
+    }
+
+    header
+    {
+        padding-left: 0;
+        justify-content: center;
+    }
+
+    h1
+    {
+        color: white;
+    }
+
+    main
+    {
+        align-items: center;
+    }
+
+    footer
+    {
+        padding-left: 0;
+        justify-content: center;
+        color: white;
+    }
+}
+
+@media only screen and (max-height: 500px)
+{
+
+}

@@ -71,7 +71,8 @@ function setValues()
         fields[0].value = sessionStorage.getItem("from");
         fields[1].value = sessionStorage.getItem("to");
         fields[2].value = sessionStorage.getItem("date");
-        fields[3].value = sessionStorage.getItem("time");
+        //uncomment the next line to keep the stored time in the input instead of updating it regularly
+        //fields[3].value = sessionStorage.getItem("time");
         fields[4].checked = (sessionStorage.getItem("isArrivalTime") === "true" ? true : false);
     }
 }

@@ -10,6 +10,13 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
+  <!-- favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../public/assets/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../public/assets/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../public/assets/favicon_io/favicon-16x16.png">
+  <link rel="icon" href="../../public/assets/favicon_io/favicon.ico">
+  <link rel="manifest" href="../../public/assets/favicon_io/site.webmanifest">
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
     crossorigin="anonymous"></script>
@@ -50,7 +57,8 @@
 
     <div id="connectionInfo">
       <h1><span id="from"></span> <i class="fa fa-long-arrow-right"></i> <span id="to"></span></h1>
-      <h3 style="font-weight: 300;">Datum: <span id="date"></span> | <span id="departureArrivalInfo"></span>: <span id="time"></span></h3>
+      <h3 style="font-weight: 300;">Datum: <span id="date"></span> | <span id="departureArrivalInfo"></span>: <span
+          id="time"></span></h3>
       <a href="../../public/index.html">Ändern</a>
     </div>
 
@@ -70,38 +78,36 @@
     </table>
 
     <template id="table">
-        {{#connections}}
-        <tr class="connectionRow">
-          <td class="tableData"><span class="tableFromTime">{{#from}} {{departure}} {{/from}}</span> <i class="fa fa-long-arrow-right"></i> <span class="tableToTime">{{#to}} {{arrival}} {{/to}}</span></td>
-          <td class="tableDuration">{{duration}}</td>
-          <td>{{#sections}} {{#journey}} {{to}} {{/journey}} {{/sections}}</td>
-          <td></td>
-          <td class="tablePlatform">Gleis {{#from}} {{platform}} {{/from}}</td>
-          <!--<td class="tablePlatform">{{#to}} {{platform}} {{/to}}</td>-->
-          <td><button class="btn btn-primary" onclick="lol();">Kaufen</button></td>
-          <td><i class="fa fa-plus-square-o rowExpander" style="color: gray;"></i></td>
-        </tr>
-        <tr class="hiddenRow detailRow">
-          <td colspan="8">
-            <span class="products"> {{products}} </span>
-          </td>
-        </tr>
-        {{/connections}}
+      {{#connections}}
+      <tr class="connectionRow">
+        <td class="tableData"><span class="tableFromTime">{{#from}} {{departure}} {{/from}}</span> <i
+            class="fa fa-long-arrow-right"></i> <span class="tableToTime">{{#to}} {{arrival}} {{/to}}</span></td>
+        <td class="tableDuration">{{duration}}</td>
+        <td>{{#sections}} {{#journey}} {{to}} {{/journey}} {{/sections}}</td>
+        <td></td>
+        <td class="tablePlatform">Gleis {{#from}} {{platform}} {{/from}}</td>
+        <!--<td class="tablePlatform">{{#to}} {{platform}} {{/to}}</td>-->
+        <td><button class="btn btn-primary" onclick="lol();">Kaufen</button></td>
+        <td><i class="fa fa-plus-square-o rowExpander" style="color: gray;"></i></td>
+      </tr>
+      <tr class="hiddenRow detailRow">
+        <td colspan="8">
+          <span class="products"> {{products}} </span>
+        </td>
+      </tr>
+      {{/connections}}
     </template>
 
   </main>
 
   <script>
-    window.onscroll = function() { adjustHeader() };
+    window.onscroll = function () { adjustHeader() };
 
-    function adjustHeader()
-    {
-      if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80)
-      {
+    function adjustHeader() {
+      if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
         document.getElementsByTagName('header')[0].style.height = "16%";
       }
-      else
-      {
+      else {
         document.getElementsByTagName('header')[0].style.height = "28%";
       }
     }

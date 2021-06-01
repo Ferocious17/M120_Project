@@ -129,9 +129,7 @@ function selectConnection(departure, from, to)
 
 function paginate(number)
 {
-    console.log(number);
     var page = parseInt(sessionStorage.getItem("page")) + number;
-    console.log(page);
     
     if (page === 3)
     {
@@ -154,8 +152,6 @@ function paginate(number)
     apiQuery = "http://transport.opendata.ch/v1/connections?transportations[]=train&from=" + from + "&to=" + to + "&date=" + date + "&time=" + time + "&isArrivalTime=" + state + "&page=" + page;
     $.get(apiQuery, function (data) {
         load(data);
-        console.log(data);
-        console.log(page);
     });
 
     sessionStorage.setItem("page", page);

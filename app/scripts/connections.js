@@ -130,17 +130,28 @@ function selectConnection(departure, from, to)
 function paginate(number)
 {
     var page = parseInt(sessionStorage.getItem("page")) + number;
-    
-    if (page === 3)
+
+    if (page === 2)
     {
         document.querySelector("#later").style.display = "none";
         document.querySelector("#pagination").style.justifyContent = "center";
+        apiQuery = "http://transport.opendata.ch/v1/connections?transportations[]=train&from=" + from + "&to=" + to + "&date=" + date + "&time=" + time + "&isArrivalTime=" + state + "&page=" + page;
+        $.get(apiQuery, function (data) {
+            load(data);
+        });
+
         return;
     }
-    else if (page === -3)
+    else if (page === -2)
     {
         document.querySelector("#earlier").style.display = "none";
         document.querySelector("#pagination").style.justifyContent = "center";
+
+        apiQuery = "http://transport.opendata.ch/v1/connections?transportations[]=train&from=" + from + "&to=" + to + "&date=" + date + "&time=" + time + "&isArrivalTime=" + state + "&page=" + page;
+        $.get(apiQuery, function (data) {
+            load(data);
+        });
+
         return;
     }
 
@@ -148,7 +159,6 @@ function paginate(number)
     document.querySelector("#earlier").style.display = "block";
     document.querySelector("#pagination").style.justifyContent = "space-between";
 
-    //page += number;
     apiQuery = "http://transport.opendata.ch/v1/connections?transportations[]=train&from=" + from + "&to=" + to + "&date=" + date + "&time=" + time + "&isArrivalTime=" + state + "&page=" + page;
     $.get(apiQuery, function (data) {
         load(data);

@@ -6,7 +6,7 @@ header
 
 h1
 {
-    margin-bottom: 5%;
+    margin-bottom: 3%;
 }
 
 main
@@ -18,9 +18,14 @@ main
 main > div
 {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: center;
-    width: 50%;
+    width: 40%;
+}
+
+main > div > a
+{
+    margin-right: 3%;
 }
 
 #backgroundTrain

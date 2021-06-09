@@ -18,6 +18,7 @@ function validate()
 {
     var valid = true;
 
+    //fields.length-1 to omit button
     for (var i = 0; i < fields.length-1; i++)
     {
         if (fields[i].value === "")

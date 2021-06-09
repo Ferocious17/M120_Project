@@ -109,6 +109,11 @@ main
     align-items: center;
 }
 
+th, td
+{
+    text-align: center;
+}
+
 td
 {
     vertical-align: middle;

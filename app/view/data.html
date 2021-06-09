@@ -46,7 +46,7 @@
 
   <main>
     <div id="steps">
-      <a class="hoverableLink">1. Verbindung</a>
+      <a class="hoverableLink" href="connections.html">1. Verbindung</a>
       <i class="fa fa-angle-right"></i>
       <a class="activeLink">2. Reisedaten</a>
       <i class="fa fa-angle-right"></i>
@@ -62,41 +62,59 @@
       <a href="../../public/index.html">Ändern</a>
     </div>
 
-    <table class="table table-hover">
-      <thead class="thead-dark">
-        <tr>
-          <th scope="col" style="vertical-align: middle;">Von - Bis</th>
-          <th scope="col" style="vertical-align: middle;">Dauer</th>
-          <th scope="col" style="vertical-align: middle;">Richtung</th>
-          <th scope="col" style="vertical-align: middle;">xy</th>
-          <th scope="col" style="text-align: center;">Plattform</th>
-          <th scope="col"></th>
-          <th scope="col"></th>
-        </tr>
-      </thead>
-      <tbody id="tableBody"></tbody>
-    </table>
+    <div id="form">
+      <h1>Reisende/r</h1>
 
-    <template id="table">
-      {{#connections}}
-      <tr class="connectionRow">
-        <td class="tableData"><span class="tableFromTime">{{#from}} {{departure}} {{/from}}</span> <i
-            class="fa fa-long-arrow-right"></i> <span class="tableToTime">{{#to}} {{arrival}} {{/to}}</span></td>
-        <td class="tableDuration">{{duration}}</td>
-        <td>{{#sections}} {{#journey}} {{to}} {{/journey}} {{/sections}}</td>
-        <td></td>
-        <td class="tablePlatform">Gleis {{#from}} {{platform}} {{/from}}</td>
-        <!--<td class="tablePlatform">{{#to}} {{platform}} {{/to}}</td>-->
-        <td><button class="btn btn-primary" onclick="lol();">Kaufen</button></td>
-        <td><i class="fa fa-plus-square-o rowExpander" style="color: gray;"></i></td>
-      </tr>
-      <tr class="hiddenRow detailRow">
-        <td colspan="8">
-          <span class="products"> {{products}} </span>
-        </td>
-      </tr>
-      {{/connections}}
-    </template>
+      <form>
+        <div class="row g-2 mb-3">
+          <div class="form-floating col-md">
+            <input type="text" class="form-control" id="firstnameInput" placeholder="Vorname">
+            <label for="firstnameInput">Vorname</label>
+            <div class="invalid-feedback">
+              Bitte geben Sie Ihren Vornamen ein
+            </div>
+          </div>
+          <div class="form-floating col-md">
+            <input type="text" class="form-control" id="lastnameInput" placeholder="Nachname">
+            <label for="lastnameInput">Nachname</label>
+            <div class="invalid-feedback">
+              Bitte geben Sie Ihren Nachnamen ein
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-2 mb-3">
+
+          <div class="form-floating col" id="timeInputs">
+            <select class="form-select" id="discountInput" aria-label="Default select" multiple>
+              <option>Keine Ermässigung</option>
+              <option>Halbtax</option>
+              <option>Junior-Karte</option>
+              <option>Kinder-Mitfahrkarte</option>
+            </select>
+            <label for="discountInput">Ermässigungen</label>
+           
+
+
+          </div>
+
+          <div class="form-floating col">
+            <input type="date" class="form-control" id="dateInput" placeholder="Geburtsdatum">
+            <label for="dateInput">Geburtsdatum</label>
+            <div class="invalid-feedback">
+              Bitte wählen Sie ein Datum aus
+            </div>
+          </div>
+
+
+          
+
+          <div id="buttonContainer">
+            <button type="button" id="submitButton" class="btn btn-primary">Reisende/n hinzufügen</button>
+          </div>
+        </div>
+      </form>
+    </div>
 
   </main>
 
@@ -113,7 +131,7 @@
     }
   </script>
 
-  <script src="../scripts/connections.js"></script>
+  <script src="../scripts/data.js"></script>
 
   <footer>
     <h4>&copy; Copyright 2021 / M120 Ticket Machine</h4>

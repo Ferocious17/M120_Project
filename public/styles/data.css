@@ -1,8 +1,50 @@
+html
+{
+    min-height: 100%;
+    height: auto;
+}
+
+body
+{
+    height: 100%;
+}
+
+header
+{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    transition: 0.2s ease;
+    height: 28%;
+    background: #FFF;
+    z-index: 9999;
+    /*border-bottom: 1px solid red;*/
+}
+
+.LogoCircular
+{
+    /*height: 264%;*/
+    height: 100%;
+    transform: scale(2);
+}
+
+#connectionInfo
+{
+    height: 40%;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*### STEPS ###*/
+
 .hoverableLink
 {
     position: relative;
     display: inline-block;
     text-align: center;
+    cursor: pointer;
 }
 
 .hoverableLink,

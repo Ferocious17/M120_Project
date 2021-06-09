@@ -59,15 +59,26 @@ function modifyTime(fields, isDuration)
     }
 }
 
+function modifyJourneys(fields)
+{
+    for (var i = 0; i < fields.length; i++)
+    {
+        var journey = fields[i].innerHTML;
+        fields[i].innerHTML = journey.substring(0, journey.indexOf(' '));
+    }
+}
+
 function beautifyContent() 
 {
     var tableFromTimeFields = document.querySelectorAll('.tableFromTime');
     var tableToTimeFields = document.querySelectorAll('.tableToTime');
     var tableDurationFields = document.querySelectorAll('.tableDuration');
+    var journeyFields = document.querySelectorAll('.journey');
 
     modifyTime(tableFromTimeFields, false);
     modifyTime(tableToTimeFields, false);
     modifyTime(tableDurationFields, true);
+    modifyJourneys(journeyFields);
 }
 
 

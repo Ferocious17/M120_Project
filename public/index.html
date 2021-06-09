@@ -32,6 +32,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/index.css">
 
@@ -44,7 +45,11 @@
 
   <header>
     <img class="LogoCircular" src="assets/Logo_Circular.png" alt="Logo">
-    <a class="LoginRef btn btn-primary" href="../app/view/login.html">Anmelden</a>
+    
+    <div class="LoginRef">
+      <button class="btn btn-primary" style="margin-right: 1%;" onclick="toLogin('../../public/index.html')">Anmelden</button>
+      <button class="btn btn-primary"><i class="themeToggle fa"></i></button>
+    </div>
   </header>
 
   <main>
@@ -56,14 +61,14 @@
           <div class="form-floating col-md">
             <input type="text" class="form-control" id="fromInput" placeholder="Von">
             <label for="fromInput">Von</label>
-            <div class="invalid-feedback">
+            <div class="invalid-tooltip">
               Bitte wählen Sie einen Ort aus
             </div>
           </div>
           <div class="form-floating col-md">
             <input type="text" class="form-control" id="toInput" placeholder="Nach">
             <label for="toInput">Nach</label>
-            <div class="invalid-feedback">
+            <div class="invalid-tooltip">
               Bitte wählen Sie einen Ort aus
             </div>
           </div>
@@ -73,7 +78,7 @@
           <div class="form-floating col">
             <input type="date" class="form-control" id="dateInput">
             <label for="dateInput">Datum</label>
-            <div class="invalid-feedback">
+            <div class="invalid-tooltip">
               Bitte wählen Sie ein Datum aus
             </div>
           </div>
@@ -82,7 +87,7 @@
           <div class="form-floating col" id="timeInputs">
             <input type="time" class="form-control" id="timeInput">
             <label for="timeInput">Uhrzeit</label>
-            <div class="invalid-feedback">
+            <div class="invalid-tooltip">
               Bitte wählen Sie eine Uhrzeit aus
             </div>
 
@@ -157,6 +162,7 @@
     </script>
 
     <script src="../app/scripts/index.js"></script>
+    <script src="../app/scripts/theme.js"></script>
 
   </main>
 

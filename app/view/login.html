@@ -27,7 +27,7 @@
     integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc"
     crossorigin="anonymous"></script>
 
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="../../public/styles/main.css">
   <link rel="stylesheet" href="../../public/styles/login.css">
 
@@ -40,6 +40,10 @@
 
   <header>
     <img class="LogoCircular" src="../../public/assets/Logo_Circular.png" alt="Logo">
+
+    <div class="LoginRef">
+      <button class="btn btn-primary"><i class="themeToggle fa"></i></button>
+    </div>
   </header>
 
   <main>
@@ -51,19 +55,25 @@
           <div class="form-floating col-md">
             <input type="email" class="form-control" id="emailInput" placeholder="E-Mail">
             <label for="fromInput">E-Mail</label>
+            <div class="invalid-tooltip">
+              Bitte geben Sie Ihre E-Mail Adresse ein
+            </div>
           </div>
         </div>
         <div class="row g-2 mb-3">
           <div class="form-floating col-md">
             <input type="password" class="form-control" id="passwordInput" placeholder="Passwort">
             <label for="toInput">Passwort</label>
+            <div class="invalid-tooltip" id="invalidPassword">
+              Bitte geben Sie Ihr Passwort ein
+            </div>
           </div>
         </div>
 
         <div class="row g-2 mb-3">
           <div id="buttons">
             <button type="button" class="btn btn-primary" id="backButton">Zurück</button>
-            <button type="submit" class="btn btn-primary" id="loginButton">Anmelden</button>
+            <button type="button" class="btn btn-primary" id="loginButton">Anmelden</button>
           </div>
           <div class="col-md" id="links">
             <a href="#">Passwort vergessen?</a>
@@ -76,11 +86,11 @@
   </main>
 
   <script src="../scripts/login.js"></script>
+  <script src="../scripts/theme.js"></script>
 
   <script>
     var backButton = document.querySelector('#backButton');
     backButton.addEventListener("click", function () {
-      console.log("back");
       window.history.back();
     });
   </script>

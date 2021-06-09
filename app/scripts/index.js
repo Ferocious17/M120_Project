@@ -12,6 +12,10 @@ function clickButton(event)
         event.preventDefault();
         searchButton.click();
     }
+    else
+    {
+        this.classList.remove("is-invalid");
+    }
 }
 
 function validate()
@@ -50,9 +54,6 @@ searchButton.addEventListener("click", function() {
         sessionStorage.setItem("time", fields[3].value);
         sessionStorage.setItem("isArrivalTime", fields[4].checked);
 
-        //var queryURL = "../app/view/connections.html?from=" + fields[0].value + "&to=" + fields[1].value + "&date=" + fields[2].value + "&time=" + fields[3].value;
-        //var queryURL = "../app/view/connections.html";
-        //window.location.href = queryURL;
         window.location.href = "../app/view/connections.html";
     }
     else
@@ -75,4 +76,10 @@ function setValues()
         //fields[3].value = sessionStorage.getItem("time");
         fields[4].checked = (sessionStorage.getItem("isArrivalTime") === "true" ? true : false);
     }
+}
+
+function toLogin(from)
+{
+    sessionStorage.setItem("toLoginFrom", from);
+    window.location.href = "../app/view/login.html";
 }

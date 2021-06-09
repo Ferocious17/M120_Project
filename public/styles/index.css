@@ -17,9 +17,9 @@ header
     z-index: 1;
 }
 
-h1
+.fa-moon-o
 {
-    margin-bottom: 5%;
+    color: white!important;
 }
 
 main

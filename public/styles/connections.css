@@ -13,27 +13,13 @@ header
     height: 28%;
     background: #FFF;
     z-index: 9999;
-    /*border-bottom: 1px solid red;*/
+    background: var(--document-background);
 }
 
 .LogoCircular
 {
-    /*height: 264%;*/
     height: 100%;
     transform: scale(2);
-}
-
-#imageLink
-{
-    height: 50%;
-    border: 1px solid black;
-}
-
-.LoginRef
-{
-    position: absolute;
-    right: 6%;
-    z-index: 1;
 }
 
 .activeLink
@@ -97,7 +83,6 @@ header
 main
 {
     padding: 1%;
-    /*margin-top: 0.5%;*/
 }
 
 #connectionInfo
@@ -109,6 +94,11 @@ main
     align-items: center;
 }
 
+#svgArrow
+{
+    fill: var(--text-color);
+}
+
 td
 {
     vertical-align: middle;
@@ -116,9 +106,15 @@ td
     padding: 3%!important;
 }
 
+table > thead > tr:first-child
+{
+    color: var(--text-color);
+}
+
 .connectionRow
 {
-    background: #f6f6f6!important;
+    background: var(--input-background)!important;
+    color: var(--text-color);
     padding: 3%!important;
 }
 
@@ -148,6 +144,7 @@ td
 .detailRow
 {
     transition: all 0.3s ease;
+    color: var(--text-color)!important;
 }
 
 #pagination

@@ -27,7 +27,7 @@
         integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc"
         crossorigin="anonymous"></script>
 
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../public/styles/main.css">
     <link rel="stylesheet" href="../../public/styles/registration.css">
 
@@ -35,7 +35,13 @@
 
 <body>
     <header>
-        <img class="LogoCircular" src="../../public/assets/Logo_Circular.png" alt="Logo">
+        <a class="imageLink" href="../../public/index.html"><img class="LogoCircular"
+                src="../../public/assets/Logo_Circular.png" alt=" Logo"></a>
+
+        <div class="LoginRef">
+            <i class="themeToggle fa"></i>
+        </div>
+
     </header>
 
     <main>
@@ -48,36 +54,47 @@
                 <form>
                     <div class="row g-2 mb-3">
                         <div class="form-floating col-md">
-                            <input type="text" class="form-control" id="firstnameInput" placeholder="Vorname" required>
+                            <input type="text" class="form-control" id="firstnameInput" placeholder="Vorname">
                             <label for="firstnameInput">Vorname</label>
+                            <div class="invalid-tooltip">
+                                Bitte geben Sie Ihren Vorname ein
+                              </div>
                         </div>
 
                         <div class="form-floating col-md">
-                            <input type="text" class="form-control" id="lastnameInput" placeholder="Nachname" required>
+                            <input type="text" class="form-control" id="lastnameInput" placeholder="Nachname">
                             <label for="lastnameInput">Nachname</label>
+                            <div class="invalid-tooltip">
+                                Bitte geben Sie Ihren Nachname ein
+                              </div>
                         </div>
                     </div>
 
                     <div class="row g-2 mb-3">
                         <div class="form-floating col-md">
-                            <input type="date" class="form-control" id="birthdateInput" placeholder="Geburtsdatum"
-                                required>
+                            <input type="date" class="form-control" id="birthdateInput" placeholder="Geburtsdatum">
                             <label for="birthdateInput">Geburtsdatum</label>
+                            <div class="invalid-tooltip">
+                                Bitte wählen Sie Ihr Geburtsdatum aus
+                              </div>
                         </div>
 
                         <div class="form-floating col-md" id="genderRadios">
                             <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" id="maleRadio" name="customRadioInline1"
-                                    class="custom-control-input" required>
-                                <label class="custom-control-label" for="maleRadio">Männlich</label>
+                                <input type="radio" id="maleRadio" name="radioMale" class="custom-control-input">
+                                <label class="custom-control-label" for="radioMale">Männlich</label>
                             </div>
+
                             <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" id="femaleRadio" name="customRadioInline1"
-                                    class="custom-control-input" required>
-                                <label class="custom-control-label" for="femaleRadio">Weiblich</label>
+                                <input type="radio" id="femaleRadio" name="radioFemale" class="custom-control-input">
+                                <label class="custom-control-label" for="radioMale">Weiblich</label>
+                                <div class="invalid-tooltip">
+                                    Bitte wählen Sie Ihr Geschlecht aus
+                                </div>
                             </div>
                         </div>
                     </div>
+                </form>
             </div>
 
             <div id="address">
@@ -86,28 +103,40 @@
                 <form>
                     <div class="row g-2 mb-3">
                         <div class="form-floating col-md">
-                            <input type="text" class="form-control" id="streetInput" placeholder="Strasse" required>
+                            <input type="text" class="form-control" id="streetInput" placeholder="Strasse">
                             <label for="streetInput">Strasse</label>
+                            <div class="invalid-tooltip">
+                                Bitte geben Sie Ihre Strasse ein
+                              </div>
                         </div>
 
                         <div class="form-floating col-md">
-                            <input type="text" class="form-control" id="houseNumberInput" placeholder="Hausnummer"
-                                required>
+                            <input type="text" class="form-control" id="houseNumberInput" placeholder="Hausnummer">
                             <label for="houseNumberInput">Hausnummer</label>
+                            <div class="invalid-tooltip">
+                                Bitte geben Sie Ihre Hausnummer ein
+                              </div>
                         </div>
                     </div>
 
                     <div class="row g-2 mb-3">
                         <div class="form-floating col-md">
-                            <input type="text" class="form-control" id="placeInput" placeholder="Ort" required>
+                            <input type="text" class="form-control" id="placeInput" placeholder="Ort">
                             <label for="placeInput">Ort</label>
+                            <div class="invalid-tooltip">
+                                Bitte geben Sie Ihren Wohnort ein
+                              </div>
                         </div>
 
                         <div class="form-floating col-md">
-                            <input type="text" class="form-control" id="postalCodeInput" placeholder="PLZ" required>
+                            <input type="text" class="form-control" id="postalCodeInput" placeholder="PLZ">
                             <label for="postalCodeInput">PLZ</label>
+                            <div class="invalid-tooltip">
+                                Bitte geben Sie die PLZ Ihres Wohnorts ein
+                              </div>
                         </div>
                     </div>
+                </form>
             </div>
 
             <div id="credentials">
@@ -118,12 +147,18 @@
                         <div class="form-floating col-md">
                             <input type="email" class="form-control" id="emailInput" placeholder="E-Mail" required>
                             <label for="emailInput">E-Mail</label>
+                            <div class="invalid-tooltip">
+                                Bitte geben Sie Ihre E-Mail Adresse ein
+                              </div>
                         </div>
 
                         <div class="form-floating col-md">
                             <input type="tel" pattern="[0-9]{3}[0-9]{3}[0-9]{2}[0-9]{2}" class="form-control"
                                 id="phonenumber" placeholder="Telefonnummer" required>
                             <label for="phonenumber">Telefonnummer</label>
+                            <div class="invalid-tooltip">
+                                Bitte geben Sie Ihre Telefonnummer ein
+                              </div>
                         </div>
                     </div>
 
@@ -132,24 +167,52 @@
                             <input type="password" class="form-control" id="passwordInput" placeholder="Passwort"
                                 required>
                             <label for="passwordInput">Passwort</label>
+                            <div class="invalid-tooltip">
+                                Bitte geben Sie Ihr Passwort ein
+                              </div>
                         </div>
 
                         <div class="form-floating col-md">
                             <input type="password" class="form-control" id="confirmPasswortInput" placeholder="Passwort"
                                 required>
                             <label for="confirmPasswortInput">Passwort bestätigen</label>
+                            <div class="invalid-tooltip" id="passwordNotEqual">
+                                Bitte bestätigen Sie Ihr Passwort
+                            </div>
                         </div>
                     </div>
-
-                    <div class="g-2 mb-3">
-                        <a href="login.html" class="btn btn-primary">Abbrechen</a>
-                        <button type="submit" class="btn btn-primary" id="registerButton">Registrieren</button>
-                    </div>
+                </form>
             </div>
 
-            </form>
+            <div id="buttons" class="g-2 mb-3">
+                <button class="btn btn-primary" id="cancelButton">Abbrechen</button>
+                <button type="submit" class="btn btn-primary" id="registerButton">Registrieren</button>
+            </div>
         </div>
-    </main>';
+    </main>
+
+    <script>
+        window.onscroll = function () { adjustHeader() };
+
+        function adjustHeader() {
+            if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+                document.getElementsByTagName('header')[0].style.height = "16%";
+            }
+            else {
+                document.getElementsByTagName('header')[0].style.height = "28%";
+            }
+        }
+    </script>
+
+    <script>
+        var backButton = document.querySelector('#cancelButton');
+        backButton.addEventListener("click", function () {
+            window.history.back();
+        });
+    </script>
+
+    <script src="../scripts/registration.js"></script>
+    <script src="../scripts/theme.js"></script>
 
     <footer>
         <h4>&copy; Copyright 2021 / M120 Ticket Machine</h4>

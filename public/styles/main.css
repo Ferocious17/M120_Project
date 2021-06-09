@@ -23,6 +23,15 @@ html
 
 body
 {
+    --text-color: #000;
+    --input-background: #FFF;
+    --document-background: #FFF; 
+    --text-color: #000;
+    --icon-color: #000;
+}
+
+body
+{
     /*display: flex;
     flex-direction: column;*/
 
@@ -35,6 +44,19 @@ body
     grid-template-rows: 26% 55% 1fr;
 
     grid-template-columns: 100%;
+
+    background: var(--document-background);
+}
+
+body.dark-theme
+{
+    --text-color: #FFF;
+    --input-background: #4B4B4B;
+    --document-background: #2a2929;
+    --text-color: #FFF;
+    --floating-label-color: #ffffff;
+    --icon-color: #FFF;
+    --step-color: rgb(172, 164, 164);
 }
 
 /*header*/
@@ -46,6 +68,30 @@ header
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.imageLink
+{
+    height: 50%;
+    border: 1px solid black;
+}
+
+.LoginRef
+{
+    position: absolute;
+    width: 10%;
+    right: 6%;
+    z-index: 1;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.LoginRef > button > i
+{
+    width: 100%;
+    height: 100%;
 }
 
 .LogoCircular
@@ -78,4 +124,53 @@ footer
     justify-content: center;
     align-items: center;
     font-size: 1.3rem;
+}
+
+/* theme settings */
+
+h1
+{
+    color: var(--text-color);
+}
+
+h3
+{
+    color: var(--text-color);
+}
+
+h4
+{
+    color: var(--text-color);
+}
+
+input
+{
+    background: var(--input-background)!important;
+    color: var(--text-color)!important;
+}
+
+i
+{
+    color: var(--icon-color)!important;
+}
+
+#steps > a :not(.activeLink)
+{
+    color: var(--step-color);
+}
+
+.fa-moon-o, .fa-sun-o
+{
+    font-size: 1rem;
+}
+
+.fa-sun-o
+{
+    color: yellow!important;
+}
+
+/* label in floating inputs */
+.form-floating > label
+{
+    color: var(--floating-label-color);
 }

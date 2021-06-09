@@ -121,21 +121,22 @@ $.get(apiQuery, function (data) {
     load(data);
 });
 
-function selectConnection(departure, from, to) 
+function selectConnection(departure) 
 {
+    sessionStorage.setItem("selectedDeparture", departure);
+    sessionStorage.setItem("selectedFrom", from);
+    sessionStorage.setItem("selectedTo", to);
+    
     var isLoggedIn = sessionStorage.getItem("isLoggedIn");
     if (isLoggedIn == null || isLoggedIn == false)
     {
-        //show page with "continue as guest" or "log in"
+        //show page with "continue as guest" or "log in" if not logged in already
         window.location.href = "../view/tempView.html";
         return;
     }
 
-    sessionStorage.setItem("selectedDeparture", "");
-    sessionStorage.setItem("selectedFrom", "");
-    sessionStorage.setItem("selectedTo", "");
-
-    //window.location.href = "data.html";
+    //already logged in
+    window.location.href = "data.html";
 }
 
 function paginate(number)
@@ -176,4 +177,10 @@ function paginate(number)
     });
 
     sessionStorage.setItem("page", page);
+}
+
+function toLogin(from)
+{
+    sessionStorage.setItem("toLoginFrom", from);
+    window.location.href = "login.html";
 }

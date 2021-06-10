@@ -4,6 +4,16 @@ html
     height: auto;
 }
 
+body
+{
+    --row-background: rgb(195, 199, 202);
+}
+
+body.dark-theme
+{
+    --row-background: var(--input-background);
+}
+
 header
 {
     position: fixed;
@@ -118,7 +128,7 @@ table > thead > tr:first-child
 
 .connectionRow
 {
-    background: var(--input-background)!important;
+    background: var(--row-background)!important;
     color: var(--text-color);
     padding: 3%!important;
 }

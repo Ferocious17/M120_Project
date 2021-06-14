@@ -16,6 +16,11 @@ header
     background: var(--document-background);
 }
 
+body
+{
+    --input-background: lightgray;
+}
+
 .LogoCircular
 {
     height: 100%;
@@ -139,17 +144,19 @@ table > thead > tr:first-child
     font-size: 1.7rem;
     vertical-align: middle;
     text-align: center;
+    margin-left: -60px;
 }
 
 .hiddenRow
 {
     display: none;
+    max-height: 0;
 }
 
 .detailRow
 {
-    transition: all 0.3s ease;
     color: var(--text-color)!important;
+    transition: max-height 0.3s ease;
 }
 
 #pagination

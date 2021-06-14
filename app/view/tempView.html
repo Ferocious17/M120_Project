@@ -58,8 +58,13 @@
     <script>
         var backButton = document.querySelector('#backButton');
         backButton.addEventListener("click", function () {
-            console.log("back");
             window.history.back();
+        });
+
+        var loginButton = document.querySelector('#loginButton');
+        loginButton.addEventListener("click", function() {
+            sessionStorage.setItem("toLoginFrom", "tempView");
+            window.location.href = "login.html";
         });
     </script>
 

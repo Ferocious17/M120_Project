@@ -52,12 +52,78 @@ for (var i = 0; i < fields.length; i++)
     }); 
 }
 
-
-var radios = document.getElementsByClassName('btn-check');
-for (var i = 0; i < radios.length; i++)
+//set the radios for the correspondig picks
+var way = sessionStorage.getItem("way");
+if (way === null || way === "oneWay")
 {
-    radios[i].addEventListener("click", adjustPrice(i))
+    document.querySelector('#oneWayRadio').checked = true;
+    sessionStorage.setItem("way", "oneWay");
 }
+else
+{
+    document.querySelector('#twoWayRadio').checked = true;
+    sessionStorage.setItem("way", "twoWay");
+}
+
+var voyageClass = sessionStorage.getItem("class");
+if (voyageClass === null || voyageClass === "second")
+{
+    document.querySelector('#secondClassRadio').checked = true;
+    sessionStorage.setItem("class", "second"); 
+}
+else
+{
+    document.querySelector('#firstClassRadio').checked = true;
+    sessionStorage.setItem("class", "first");
+}
+
+document.querySelector('#oneWayRadio').addEventListener("click", function() {
+    if (sessionStorage.getItem("way") === "oneWay")
+        return;
+
+    var currentPrice = sessionStorage.getItem("price");
+    currentPrice /= 2;
+    currentPrice = (Math.round(currentPrice*10)/10).toFixed(2);
+    document.querySelector('#price').innerHTML = currentPrice;
+    sessionStorage.setItem("price", currentPrice);
+    sessionStorage.setItem("way", "oneWay");
+})
+
+document.querySelector('#twoWayRadio').addEventListener("click", function() {
+    if (sessionStorage.getItem("way") === "twoWay")
+        return;
+
+    var currentPrice = sessionStorage.getItem("price");
+    currentPrice *= 2;
+    currentPrice = (Math.round(currentPrice*10)/10).toFixed(2);
+    document.querySelector('#price').innerHTML = currentPrice;
+    sessionStorage.setItem("price", currentPrice);
+    sessionStorage.setItem("way", "twoWay");
+})
+
+document.querySelector('#firstClassRadio').addEventListener("click", function() {
+    if (sessionStorage.getItem("class") === "first")
+        return;
+
+    var currentPrice = parseFloat(sessionStorage.getItem("price"));
+    currentPrice += 5;
+    currentPrice = (Math.round(currentPrice*10)/10).toFixed(2);
+    document.querySelector('#price').innerHTML = currentPrice;
+    sessionStorage.setItem("price", currentPrice);
+    sessionStorage.setItem("class", "first");
+})
+
+document.querySelector('#secondClassRadio').addEventListener("click", function() {
+    if (sessionStorage.getItem("class") === "second")
+        return;
+
+    var currentPrice = parseFloat(sessionStorage.getItem("price"));
+    currentPrice -= 5;
+    currentPrice = (Math.round(currentPrice*10)/10).toFixed(2);
+    document.querySelector('#price').innerHTML = currentPrice;
+    sessionStorage.setItem("price", currentPrice);
+    sessionStorage.setItem("class", "second");
+})
 
 function adjustPrice(index)
 {

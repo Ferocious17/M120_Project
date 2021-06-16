@@ -40,3 +40,23 @@ document.querySelector('#purchaseButton').addEventListener("click", function() {
 
     window.location.href = "../view/confirmation.html";
 });
+
+function goToData()
+{
+    if (sessionStorage.getItem("isLoggedIn") != "true")
+    {
+        window.location.href = "../view/data.html";
+    }
+}
+
+//disable data entry if user is logged in
+if (sessionStorage.getItem("isLoggedIn") == "true")
+{
+    document.querySelector('#dataLink').classList.remove("hoverableLink");
+    document.querySelector('#dataLink').classList.add("disabledLink");
+}
+else
+{
+    document.querySelector('#dataLink').classList.remove("disabledLink");
+    document.querySelector('#dataLink').classList.add("hoverableLink");
+}

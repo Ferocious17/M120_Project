@@ -142,7 +142,7 @@ function selectConnection(departure, arrival, duration)
     sessionStorage.setItem("selectedTo", to);
     
     var isLoggedIn = sessionStorage.getItem("isLoggedIn");
-    if (isLoggedIn == null || isLoggedIn == false)
+    if (isLoggedIn == null || isLoggedIn == "false")
     {
         //show page with "continue as guest" or "log in" if not logged in already
         window.location.href = "../view/tempView.html";
@@ -150,7 +150,7 @@ function selectConnection(departure, arrival, duration)
     }
 
     //already logged in
-    window.location.href = "data.html";
+    window.location.href = "payment.html";
 }
 
 function paginate(number)

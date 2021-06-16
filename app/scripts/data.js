@@ -171,11 +171,25 @@ function validate()
     return valid;
 }
 
+var firstname = sessionStorage.getItem("guestFirstname");
+var lastname = sessionStorage.getItem("guestLastname");
+var birthdate = sessionStorage.getItem("guestBirthdate");
+console.log(firstname);
+
+if (firstname !== null)
+{
+    document.querySelector('#firstnameInput').innerHTML = firstname;
+    document.querySelector('#lastnameInput').innerHTML = lastname;
+    document.querySelector('#birthdateInput').innerHTML = birthdate;
+}
+
 document.querySelector('#purchaseButton').addEventListener("click", function() {
-    console.log("called");
     if (validate())
     {
-
+        sessionStorage.setItem("guestFirstname", document.querySelector('#firstnameInput').innerHTML);
+        sessionStorage.setItem("guestLastname", document.querySelector('#lastnameInput').innerHTML);
+        sessionStorage.setItem("guestBirthdate", document.querySelector('#birthdateInput').innerHTML);
+        window.location.href = "../view/payment.html";
     }
     else
     {

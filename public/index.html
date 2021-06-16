@@ -159,6 +159,13 @@
       document.querySelector('#dateInput').value = new Date().toLocaleDateString('en-CA');
       //substring to strip the seconds
       document.getElementById('timeInput').value = currentTime.substring(0, 5);
+
+      //reset values
+      sessionStorage.setItem("class", null);
+      sessionStorage.setItem("way", null);
+      sessionStorage.setItem("guestFirstname", null);
+      sessionStorage.setItem("guestLastname", null);
+      sessionStorage.setItem("guestBirthdate", null);
     </script>
 
     <script src="../app/scripts/index.js"></script>

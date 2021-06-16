@@ -140,3 +140,45 @@ document.querySelector('#secondClassRadio').addEventListener("click", function()
     sessionStorage.setItem("price", currentPrice);
     sessionStorage.setItem("class", "second");
 });
+
+//input fields
+var fields = document.getElementsByTagName('input');
+
+for (var i = 0; i < fields.length; i++)
+{
+    fields[i].addEventListener("keyup", function() {
+        this.classList.remove("is-invalid");
+    }); 
+}
+
+function validate()
+{
+    var valid = true;
+
+    for (var i = 0; i < fields.length; i++)
+    {
+        if (fields[i].value === "" )
+        {
+            fields[i].classList.add("is-invalid");
+            valid = false;
+        }
+        else if (fields[i].value != "")
+        {
+            fields[i].classList.remove("is-invalid");
+        }
+    }
+
+    return valid;
+}
+
+document.querySelector('#purchaseButton').addEventListener("click", function() {
+    console.log("called");
+    if (validate())
+    {
+
+    }
+    else
+    {
+
+    }
+});

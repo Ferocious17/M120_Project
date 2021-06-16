@@ -179,11 +179,10 @@
         <span id="price"></span>
 
         <div id="buttons" class="g-2 mb-3">
-            <button type="submit" class="btn btn-primary" id="registerButton">Zur Kasse</button>
+            <button class="btn btn-primary" id="purchaseButton">Zur Kasse</button>
         </div>
     </aside>
 
-    <script src="../scripts/multiselect/src/jquery.multi-select.js"></script>
     <script>
         window.onscroll = function () { adjustHeader(); adjustAside(); };
         document.querySelector('#info').style.display = "none";
@@ -212,9 +211,6 @@
                 voyageDisplayer.style.display = "none";
             }
         }
-
-        //multi-select
-        $('#languages').multiSelect();
     </script>
 
     <script src="../scripts/data.js"></script>

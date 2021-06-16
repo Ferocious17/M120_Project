@@ -36,17 +36,6 @@ function validate()
         }
     }
 
-    //validate if a gender is picked
-    if (document.querySelector('#maleRadio').checked || document.querySelector('#femaleRadio').checked)
-    {
-        document.querySelector('.invalid-gender-tooltip').style.display = "none";
-    }
-    else
-    {
-        document.querySelector('.invalid-gender-tooltip').style.display = "block";
-        valid = false;
-    }
-
     return valid;
 }
 

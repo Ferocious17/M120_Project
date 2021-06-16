@@ -1,3 +1,13 @@
+//listener for numeric input PLZ
+function isNumber(event)
+{
+    var inputKeyCode = (event.which) ? event.which : event.keyCode;
+    if (inputKeyCode > 31 && (inputKeyCode < 48 || inputKeyCode > 57))
+        return false;
+    
+    return true;
+}
+
 //input fields
 var fields = document.getElementsByTagName('input');
 
@@ -24,6 +34,17 @@ function validate()
         {
             fields[i].classList.remove("is-invalid");
         }
+    }
+
+    //validate if a gender is picked
+    if (document.querySelector('#maleRadio').checked || document.querySelector('#femaleRadio').checked)
+    {
+        document.querySelector('.invalid-gender-tooltip').style.display = "none";
+    }
+    else
+    {
+        document.querySelector('.invalid-gender-tooltip').style.display = "block";
+        valid = false;
     }
 
     return valid;

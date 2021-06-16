@@ -4,41 +4,6 @@ html
     height: auto;
 }
 
-body
-{
-    height: 100%;
-}
-
-header
-{
-    position: fixed;
-    width: 100%;
-    top: 0;
-    transition: 0.2s ease;
-    height: 28%;
-    background: #FFF;
-    z-index: 9999;
-    /*border-bottom: 1px solid red;*/
-}
-
-.LogoCircular
-{
-    /*height: 264%;*/
-    height: 100%;
-    transform: scale(2);
-}
-
-#connectionInfo
-{
-    height: 40%;
-    flex-direction: column;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/*### STEPS ###*/
-
 .hoverableLink
 {
     position: relative;
@@ -134,3 +99,93 @@ header
 {
     color: gray;
 }
+
+header
+{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    transition: 0.2s ease;
+    height: 28%;
+    background: #FFF;
+    z-index: 9999;
+    background: var(--document-background);
+}
+
+.LogoCircular
+{
+    height: 100%;
+    transform: scale(2);
+}
+
+#connectionInfo
+{
+    height: 40%;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#svgArrow
+{
+    fill: var(--text-color);
+}
+
+h1:not(#fromH1)
+{
+    margin-bottom: 7%;
+}
+
+main
+{
+    margin-top: 3%;
+    padding: 1%;
+}
+
+h3
+{
+    font-weight: bold;
+    margin-bottom: 3%;
+}
+
+#form
+{
+    padding: 3%;
+    width: 50%;
+    margin-right: 30%;
+}
+
+#personalData, #options, #credentials
+{
+    margin-bottom: 9%;
+}
+
+#houseNumberInput, #postalCodeInput
+{
+    width: 50%;
+}
+
+aside
+{
+    position: fixed;
+    height: 30%;
+    width: 30%;
+    margin-right: 3%;
+    top: 60%;
+    right: 0;
+    z-index: 1;
+    color: var(--text-color);
+
+    background: var(--input-background);
+    border: 1px solid var(--text-color);
+    border-radius: 13px;
+    transition: all 0.3s ease;
+}
+
+footer
+{
+    margin-top: 9%;
+    margin-bottom: 3%;
+}
+

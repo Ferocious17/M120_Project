@@ -100,7 +100,7 @@
         <td class="journey" style="text-align: left;">{{#sections}}{{#journey}}{{to}} {{/journey}}{{/sections}}</td>
         <td>{{transfers}}</td>
         <td class="tablePlatform">Gleis {{#from}} {{platform}} {{/from}}</td>
-        <td><button class="btn btn-primary" onclick="selectConnection('{{#from}}{{departure}}{{/from}}');">Kaufen</button></td>
+        <td><button class="btn btn-primary" onclick="selectConnection('{{#from}}{{departure}}{{/from}}', '{{duration}}');">Kaufen</button></td>
         <td><i class="fa fa-plus-square-o rowExpander" style="color: gray;"></i></td>
       </tr>
       <tr class="hiddenRow detailRow">

@@ -2,142 +2,193 @@
 <html lang="en">
 
 <head>
-  <title>M120 Ticket Machine | Reisedaten</title>
+    <title>M120 Ticket Machine | Reisedaten</title>
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
-  <!-- favicon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="../../public/assets/favicon_io/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="../../public/assets/favicon_io/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../../public/assets/favicon_io/favicon-16x16.png">
-  <link rel="icon" href="../../public/assets/favicon_io/favicon.ico">
-  <link rel="manifest" href="../../public/assets/favicon_io/site.webmanifest">
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../../public/assets/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../public/assets/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../public/assets/favicon_io/favicon-16x16.png">
+    <link rel="icon" href="../../public/assets/favicon_io/favicon.ico">
+    <link rel="manifest" href="../../public/assets/favicon_io/site.webmanifest">
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
-    integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
-    integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc"
-    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
+        integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
+        integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc"
+        crossorigin="anonymous"></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.1.0/mustache.min.js"></script>
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="../../public/styles/main.css">
-  <link rel="stylesheet" href="../../public/styles/data.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../public/styles/main.css">
+    <link rel="stylesheet" href="../../public/styles/data.css">
 
 </head>
 
 <body>
-  <header>
-    <img class="LogoCircular" src="../../public/assets/Logo_Circular.png"" alt=" Logo">
-    <a class="btn btn-primary" href="login.html" style="margin-right: 1%;">Anmelden</a>
-    <i class="themeToggle fa"></i>
-  </header>
+    <header>
+        <a class="imageLink" href="../../public/index.html"><img class="LogoCircular"
+                src="../../public/assets/Logo_Circular.png" alt=" Logo"></a>
 
-  <main>
-    <div id="steps">
-      <a class="hoverableLink" href="connections.html">1. Verbindung</a>
-      <i class="fa fa-angle-right"></i>
-      <a class="activeLink">2. Reisedaten</a>
-      <i class="fa fa-angle-right"></i>
-      <a class="disabledLink">3. Bezahlung</a>
-      <i class="fa fa-angle-right"></i>
-      <a class="disabledLink">4. Bestätigung</a>
-    </div>
-
-    <div id="connectionInfo">
-      <h1><span id="from"></span> <i class="fa fa-long-arrow-right"></i> <span id="to"></span></h1>
-      <h3 style="font-weight: 300;">Datum: <span id="date"></span> | <span id="departureArrivalInfo"></span>: <span
-          id="time"></span></h3>
-      <a href="../../public/index.html">Ändern</a>
-    </div>
-
-    <div id="form">
-      <h1>Reisende/r</h1>
-
-      <form>
-        <div class="row g-2 mb-3">
-          <div class="form-floating col-md">
-            <input type="text" class="form-control" id="firstnameInput" placeholder="Vorname">
-            <label for="firstnameInput">Vorname</label>
-            <div class="invalid-feedback">
-              Bitte geben Sie Ihren Vornamen ein
-            </div>
-          </div>
-          <div class="form-floating col-md">
-            <input type="text" class="form-control" id="lastnameInput" placeholder="Nachname">
-            <label for="lastnameInput">Nachname</label>
-            <div class="invalid-feedback">
-              Bitte geben Sie Ihren Nachnamen ein
-            </div>
-          </div>
+        <div class="LoginRef">
+            <i class="themeToggle fa"></i>
         </div>
 
-        <div class="row g-2 mb-3">
+    </header>
 
-          <div class="form-floating col" id="timeInputs">
-            <select class="form-select" id="discountInput" aria-label="Default select" multiple>
-              <option>Keine Ermässigung</option>
-              <option>Halbtax</option>
-              <option>Junior-Karte</option>
-              <option>Kinder-Mitfahrkarte</option>
-            </select>
-            <label for="discountInput">Ermässigungen</label>
-           
+    <main>
+      <div id="steps">
+        <a class="hoverableLink" href="connections.html">1. Verbindung</a>
+        <i class="fa fa-angle-right"></i>
+        <a class="activeLink">2. Reisedaten</a>
+        <i class="fa fa-angle-right"></i>
+        <a class="disabledLink">3. Bezahlung</a>
+        <i class="fa fa-angle-right"></i>
+        <a class="disabledLink">4. Bestätigung</a>
+      </div>
 
+      <div id="connectionInfo">
+        <h1 id="fromH1"><span id="from"></span> <svg xmlns="http://www.w3.org/2000/svg" class="svg" viewBox="0 0 24 24" width="30" height="30">
+            <path fill="none" d="M0 0h24v24H0z" />
+            <path id="svgArrow" d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" />
+          </svg> <span id="to"></span></h1>
+        <h3 style="font-weight: 300;">Datum: <span id="date"></span> | Abfahrt: <span id="time"></span></h3>
+        <a href="../../public/index.html">Ändern</a>
+      </div>
 
-          </div>
+        <div id="form">
+            <h1>Reisende/r</h1>
 
-          <div class="form-floating col">
-            <input type="date" class="form-control" id="dateInput" placeholder="Geburtsdatum">
-            <label for="dateInput">Geburtsdatum</label>
-            <div class="invalid-feedback">
-              Bitte wählen Sie ein Datum aus
+            <div id="personalData">
+                <form>
+                    <div class="row g-2 mb-3">
+                        <div class="form-floating col-md">
+                            <input type="text" class="form-control" id="firstnameInput" placeholder="Vorname">
+                            <label for="firstnameInput">Vorname</label>
+                            <div class="invalid-tooltip">
+                                Bitte geben Sie Ihren Vornamen ein
+                              </div>
+                        </div>
+
+                        <div class="form-floating col-md">
+                            <input type="text" class="form-control" id="lastnameInput" placeholder="Nachname">
+                            <label for="lastnameInput">Nachname</label>
+                            <div class="invalid-tooltip">
+                                Bitte geben Sie Ihren Nachnamen ein
+                              </div>
+                        </div>
+                    </div>
+
+                    <div class="row g-2 mb-3">
+                        <select id="discounts" name="discounts" multiple>
+                          <option value="noDiscount">Keine Ermässigung</option>
+                          <option value="halbtax">Halbtax</option>
+                          <option value="junior">Junior-Karte</option>
+                          <option value="child">Kinder-Karte</option>
+                        </select>
+                      
+                        <div class="form-floating col-md">
+                            <input type="date" class="form-control" id="birthdateInput" placeholder="Geburtsdatum">
+                            <label for="birthdateInput">Geburtsdatum</label>
+                            <div class="invalid-tooltip">
+                                Bitte wählen Sie Ihr Geburtsdatum aus
+                              </div>
+                        </div>
+                    </div>
+
+                    <div id="buttons" class="g-2 mb-3">
+                      <button type="submit" class="btn btn-primary" id="addTravellerButton">Reisende/n hinzufügen</button>
+                  </div>
+                </form>
             </div>
-          </div>
 
+            <div id="options">
+                <h3>Optionen</h3>
 
-          
-
-          <div id="buttonContainer">
-            <button type="button" id="submitButton" class="btn btn-primary">Reisende/n hinzufügen</button>
-          </div>
+                <div style="display: flex; justify-content: flex-start; align-items: center; width: 100%;">
+                    <form style="margin-right: 9%;">
+                        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                          <input type="radio" class="btn-check" name="btnradio" id="oneWayRadio" autocomplete="off" checked>
+                          <label class="btn btn-outline-primary" for="oneWayRadio">Einfache Fahrt</label>
+                        
+                          <input type="radio" class="btn-check" name="btnradio" id="twoWayRadio" autocomplete="off">
+                          <label class="btn btn-outline-primary" for="twoWayRadio">Hin- & Rückfahrt</label> 
+                        </div>
+                      </form>
+      
+                      <form>
+                        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                          <input type="radio" class="btn-check" name="btnradio" id="firstClassRadio" autocomplete="off">
+                          <label class="btn btn-outline-primary" for="firstClassRadio">1. Klasse</label>
+                        
+                          <input type="radio" class="btn-check" name="btnradio" id="secondClassRadio" autocomplete="off" checked>
+                          <label class="btn btn-outline-primary" for="secondClassRadio">2. Klasse</label>
+                        </div>
+                      </form>
+                </div>
+            </div>
         </div>
-      </form>
-    </div>
+    </main>
 
-  </main>
+    <aside>
+        Info
 
-  <script>
-    window.onscroll = function () { adjustHeader() };
+        <div id="price"></div>
 
-    function adjustHeader() {
-      if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-        document.getElementsByTagName('header')[0].style.height = "16%";
-      }
-      else {
-        document.getElementsByTagName('header')[0].style.height = "28%";
-      }
-    }
-  </script>
+        <div id="buttons" class="g-2 mb-3">
+            <button class="btn btn-primary" id="cancelButton">Abbrechen</button>
+            <button type="submit" class="btn btn-primary" id="registerButton">Zur Kasse</button>
+        </div>
+    </aside>
+    
+    <script src="../scripts/multiselect/src/jquery.multi-select.js"></script>
+    <script>
+        //load price on load
+        document.querySelector('#price').innerHTML = sessionStorage.getItem("price");
 
-  <script src="../scripts/data.js"></script>
-  <script src="../scripts/theme.js"></script>
+        window.onscroll = function () { adjustHeader(); adjustAside(); };
 
-  <footer>
-    <h4>&copy; Copyright 2021 / M120 Ticket Machine</h4>
-  </footer>
+        function adjustHeader() {
+            if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+                document.getElementsByTagName('header')[0].style.height = "16%";
+            }
+            else {
+                document.getElementsByTagName('header')[0].style.height = "28%";
+            }
+        }
+
+        function adjustAside()
+        {
+            var aside = document.getElementsByTagName('aside')[0];
+            if (document.body.scrollTop > 180 || document.documentElement.scrollTop > 180) {
+                aside.style.height = "50%";
+                aside.style.top = "25%";
+            }
+            else {
+                aside.style.height = "30%";
+                aside.style.top = "60%";
+            }
+        }
+
+        //multi-select
+        $('#languages').multiSelect();
+    </script>
+
+    <script src="../scripts/data.js"></script>
+    <script src="../scripts/theme.js"></script>
+
+    <footer>
+        <h4>&copy; Copyright 2021 / M120 Ticket Machine</h4>
+    </footer>
 
 </body>
 

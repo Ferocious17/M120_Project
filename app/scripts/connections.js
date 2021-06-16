@@ -121,8 +121,20 @@ $.get(apiQuery, function (data) {
     load(data);
 });
 
-function selectConnection(departure) 
+//these are the x coordinates of the respective stations
+function setPrice(duration)
 {
+    var modifiedDuration = duration.substring(duration.indexOf('d') + 1);
+    var hms = modifiedDuration.split(':');
+    var minutes = hms[0] * 60 + parseInt(hms[1]);
+
+    var price = minutes * 0.3;
+    return (Math.round(price*10)/10).toFixed(2);
+}
+
+function selectConnection(departure, duration) 
+{
+    sessionStorage.setItem("price", setPrice(duration));
     sessionStorage.setItem("selectedDeparture", departure);
     sessionStorage.setItem("selectedFrom", from);
     sessionStorage.setItem("selectedTo", to);

@@ -57,7 +57,7 @@
                             <input type="text" class="form-control" id="firstnameInput" placeholder="Vorname">
                             <label for="firstnameInput">Vorname</label>
                             <div class="invalid-tooltip">
-                                Bitte geben Sie Ihren Vorname ein
+                                Bitte geben Sie Ihren Vornamen ein
                               </div>
                         </div>
 
@@ -65,7 +65,7 @@
                             <input type="text" class="form-control" id="lastnameInput" placeholder="Nachname">
                             <label for="lastnameInput">Nachname</label>
                             <div class="invalid-tooltip">
-                                Bitte geben Sie Ihren Nachname ein
+                                Bitte geben Sie Ihren Nachnamen ein
                               </div>
                         </div>
                     </div>
@@ -81,16 +81,13 @@
 
                         <div class="form-floating col-md" id="genderRadios">
                             <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" id="maleRadio" name="radioMale" class="custom-control-input">
+                                <input type="radio" id="maleRadio" name="radio" class="custom-control-input" checked>
                                 <label class="custom-control-label" for="radioMale">Männlich</label>
                             </div>
 
                             <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" id="femaleRadio" name="radioFemale" class="custom-control-input">
+                                <input type="radio" id="femaleRadio" name="radio" class="custom-control-input">
                                 <label class="custom-control-label" for="radioMale">Weiblich</label>
-                                <div class="invalid-tooltip">
-                                    Bitte wählen Sie Ihr Geschlecht aus
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -129,7 +126,7 @@
                         </div>
 
                         <div class="form-floating col-md">
-                            <input type="text" class="form-control" id="postalCodeInput" placeholder="PLZ">
+                            <input type="text" class="form-control" id="postalCodeInput" placeholder="PLZ" onkeypress="javascript:return isNumber(event)">
                             <label for="postalCodeInput">PLZ</label>
                             <div class="invalid-tooltip">
                                 Bitte geben Sie die PLZ Ihres Wohnorts ein
@@ -153,8 +150,8 @@
                         </div>
 
                         <div class="form-floating col-md">
-                            <input type="tel" pattern="[0-9]{3}[0-9]{3}[0-9]{2}[0-9]{2}" class="form-control"
-                                id="phonenumber" placeholder="Telefonnummer" required>
+                            <input type="tel" class="form-control"
+                                id="phonenumber" placeholder="Telefonnummer" onkeypress="javascript:return isNumber(event)" required>
                             <label for="phonenumber">Telefonnummer</label>
                             <div class="invalid-tooltip">
                                 Bitte geben Sie Ihre Telefonnummer ein

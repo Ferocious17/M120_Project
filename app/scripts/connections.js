@@ -114,6 +114,7 @@ async function load(data)
     insertInformation();
     beautifyContent();
     addRowClickEvents();
+    addDetailRowClickEvents();
 }
 
 $.get(apiQuery, function (data) {
@@ -195,4 +196,26 @@ function toLogin(from)
 {
     sessionStorage.setItem("toLoginFrom", from);
     window.location.href = "login.html";
+}
+
+function addDetailRowClickEvents()
+{
+    var showPassListButtons = document.querySelectorAll('.showPassListButton');
+    var passList = document.querySelectorAll('.passList');
+
+    for (let i = 0; i < showPassListButtons.length; i++)
+    {
+        showPassListButtons[i].addEventListener("click", function() {
+            if (showPassListButtons[i].innerHTML === "Alle Stationen anzeigen")
+            {
+                passList[i].style.display = "block";
+                showPassListButtons[i].innerHTML = "Stationen verbergen";
+            }
+            else
+            {
+                passList[i].style.display = "none";
+                showPassListButtons[i].innerHTML = "Alle Stationen anzeigen";
+            }
+        });
+    }
 }

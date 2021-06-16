@@ -169,6 +169,11 @@ table > thead > tr:first-child
     transition: max-height 0.3s ease;
 }
 
+.passList
+{
+    display: none;
+}
+
 #pagination
 {
     display: flex;

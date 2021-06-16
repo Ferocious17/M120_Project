@@ -105,8 +105,13 @@
       </tr>
       <tr class="hiddenRow detailRow">
         <td colspan="7" style="text-align: left;">
-          <span class="products"> 
-            {{products}}
+          <span class="fromTo">
+            {{#sections}}{{#journey}}{{category}} {{number}} - {{#passList.0}}{{#station}}{{name}}{{/station}}{{/passList.0}} <i
+            class="fa fa-long-arrow-right"></i> {{to}}<br>{{/journey}}{{/sections}}
+          </span>
+          <button class="btn btn-primary showPassListButton" class="btn btn-primary" style="margin-top: 3%;">Alle Stationen anzeigen</button><br>
+          <span class="passList" style="margin-top: 3%;">
+            {{#sections}}{{#journey}}{{#passList}}{{#station}}{{name}}<br>{{/station}}{{/passList}}{{/journey}}{{/sections}}
           </span>
         </td>
       </tr>

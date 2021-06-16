@@ -174,25 +174,35 @@ function validate()
 var firstname = sessionStorage.getItem("guestFirstname");
 var lastname = sessionStorage.getItem("guestLastname");
 var birthdate = sessionStorage.getItem("guestBirthdate");
-console.log(firstname);
+var noDiscountsChecked = sessionStorage.getItem("noDiscount");
+var halbtaxChecked = sessionStorage.getItem("halbtax");
+var juniorcardChecked = sessionStorage.getItem("juniorcard");
+var childcardChecked = sessionStorage.getItem("childcard");
 
-if (firstname !== null)
+console.log(typeof noDiscountsChecked);
+console.log(typeof firstname);
+
+if (firstname !== "null")
 {
-    document.querySelector('#firstnameInput').innerHTML = firstname;
-    document.querySelector('#lastnameInput').innerHTML = lastname;
-    document.querySelector('#birthdateInput').innerHTML = birthdate;
+    document.querySelector('#firstnameInput').value = firstname;
+    document.querySelector('#lastnameInput').value = lastname;
+    document.querySelector('#birthdateInput').value = birthdate;
+    document.querySelector('#noDiscounts').checked = (noDiscountsChecked === "true");
+    document.querySelector('#halbtax').checked = (halbtaxChecked === "true");
+    document.querySelector('#juniorcard').checked = (juniorcardChecked === "true");
+    document.querySelector('#childcard').checked = (childcardChecked === "true");
 }
 
 document.querySelector('#purchaseButton').addEventListener("click", function() {
     if (validate())
     {
-        sessionStorage.setItem("guestFirstname", document.querySelector('#firstnameInput').innerHTML);
-        sessionStorage.setItem("guestLastname", document.querySelector('#lastnameInput').innerHTML);
-        sessionStorage.setItem("guestBirthdate", document.querySelector('#birthdateInput').innerHTML);
+        sessionStorage.setItem("guestFirstname", document.querySelector('#firstnameInput').value);
+        sessionStorage.setItem("guestLastname", document.querySelector('#lastnameInput').value);
+        sessionStorage.setItem("guestBirthdate", document.querySelector('#birthdateInput').value);
+        sessionStorage.setItem("noDiscount", document.querySelector('#noDiscounts').checked);
+        sessionStorage.setItem("halbtax", document.querySelector('#halbtax').checked);
+        sessionStorage.setItem("juniorcard", document.querySelector('#juniorcard').checked);
+        sessionStorage.setItem("childcard", document.querySelector('#childcard').checked);
         window.location.href = "../view/payment.html";
-    }
-    else
-    {
-
     }
 });

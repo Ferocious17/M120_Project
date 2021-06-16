@@ -25,3 +25,18 @@ function insertInformation()
 
 insertInformation();
 modifyTime(document.querySelectorAll('.time'));
+
+document.querySelector('#purchaseButton').addEventListener("click", function() {
+    const radios = document.querySelectorAll('.radio');
+
+    for (var i = 0; radios.length; i++)
+    {
+        if (radios[i].checked)
+        {
+            sessionStorage.setItem("paymentMethod", radios[i].value);
+            break;
+        }
+    }
+
+    window.location.href = "../view/confirmation.html";
+});

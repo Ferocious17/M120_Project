@@ -161,11 +161,20 @@
       document.getElementById('timeInput').value = currentTime.substring(0, 5);
 
       //reset values
+      sessionStorage.removeItem("class");
+      sessionStorage.removeItem("way");
+      sessionStorage.removeItem("guestFirstname");
+      sessionStorage.removeItem("guestLastname");
+      sessionStorage.removeItem("guestBirthdate");
+
+      /*
       sessionStorage.setItem("class", null);
       sessionStorage.setItem("way", null);
       sessionStorage.setItem("guestFirstname", null);
       sessionStorage.setItem("guestLastname", null);
       sessionStorage.setItem("guestBirthdate", null);
+      */
+     
       sessionStorage.setItem("noDiscount", true);
       sessionStorage.setItem("halbtax", false);
       sessionStorage.setItem("juniorcard", false);

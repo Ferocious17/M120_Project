@@ -179,7 +179,7 @@ var halbtaxChecked = sessionStorage.getItem("halbtax");
 var juniorcardChecked = sessionStorage.getItem("juniorcard");
 var childcardChecked = sessionStorage.getItem("childcard");
 
-if (firstname !== "null")
+if (firstname !== null)
 {
     document.querySelector('#firstnameInput').value = firstname;
     document.querySelector('#lastnameInput').value = lastname;

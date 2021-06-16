@@ -133,10 +133,11 @@ function setPrice(duration)
     return (Math.round(price*10)/10).toFixed(2);
 }
 
-function selectConnection(departure, duration) 
+function selectConnection(departure, arrival, duration) 
 {
     sessionStorage.setItem("price", setPrice(duration));
     sessionStorage.setItem("selectedDeparture", departure);
+    sessionStorage.setItem("selectedArrival", arrival);
     sessionStorage.setItem("selectedFrom", from);
     sessionStorage.setItem("selectedTo", to);
     

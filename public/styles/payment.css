@@ -149,9 +149,76 @@ h3
     color: var(--text-color);
 }
 
+#paymentMethods
+{
+    margin-top: 6%;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+#methods input
+{
+    margin: 0;
+    padding: 0;
+    appearance: none;
+}
+
+.twint
+{
+    background: url(../assets/payments/twint.jpg);
+}
+
+.creditcard
+{
+    background: url(../assets/payments/creditcard.png);
+}
+
+.reka
+{
+    background: url(../assets/payments/reka.jpg);
+}
+
+.postfinance
+{
+    background: url(../assets/payments/postfinance.png);
+}
+
+#methods input:active + .drinkcard-cc
+{
+    opacity: 0.9;
+}
+
+#methods input:checked + .drinkcard-cc
+{
+    filter: none;
+}
+
+.drinkcard-cc
+{
+    cursor: pointer;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 100px;
+    height: 70px;
+    transition: all 100ms ease-in;
+    filter: brightness(1.8) grayscale(1) opacity(0.7);
+}
+
+.drinkcard-cc:hover
+{
+    filter: brightness(1.2) grayscale(0.5) opacity(0.9);
+}
+
+#purchaseButton
+{
+    margin-top: 3%;
+    width: 13%;
+}
+
 footer
 {
-    margin-top: 9%;
-    margin-bottom: 3%;
+    margin-top: 8%;
 }
 

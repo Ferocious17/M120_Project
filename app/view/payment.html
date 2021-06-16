@@ -70,7 +70,21 @@
             <a href="../../public/index.html">Ändern</a>
         </div>
 
-        
+        <form id="paymentMethods">
+            <div id="methods">
+                <input id="twint" type="radio" name="payment" value="twint">
+                <label class="drinkcard-cc twint" for="twint"></label>
+                <input id="creditcard" type="radio" name="payment" value="creditcard">
+                <label class="drinkcard-cc creditcard" for="creditcard"></label>
+                <input id="reka" type="radio" name="payment" value="reka">
+                <label class="drinkcard-cc reka" for="reka"></label>
+                <input id="postfinance" type="radio" name="payment" value="postfinance">
+                <label class="drinkcard-cc postfinance" for="postfinance"></label>
+            </div>
+
+        </form>
+        <button id="purchaseButton" class="btn btn-primary">Kaufen</button>
+
     </main>
 
     <script src="../scripts/payment.js"></script>

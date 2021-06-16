@@ -3,24 +3,32 @@ var selectedFrom = sessionStorage.getItem("selectedFrom");
 var selectedTo = sessionStorage.getItem("selectedTo");
 var date = sessionStorage.getItem("date");
 
-function modifyTime(field) 
+function modifyTime(fields) 
 {
-    var time = field.innerHTML;
-    var modifiedTime = "";
-    modifiedTime = time.substring(time.indexOf('T') + 1, time.indexOf('+') - 3);
-    field.innerHTML = modifiedTime;
+    for (var i = 0; i < fields.length; i++)
+    {
+        var time = fields[i].innerHTML;
+        var modifiedTime = "";
+        modifiedTime = time.substring(time.indexOf('T') + 1, time.indexOf('+') - 3);
+        fields[i].innerHTML = modifiedTime;
+    }
 }
 
 function insertInformation() 
 {
-    document.querySelector('#from').innerHTML = selectedFrom;
-    document.querySelector('#to').innerHTML = selectedTo;
-    document.querySelector('#date').innerHTML = date;
-    document.querySelector('#time').innerHTML = selectedDeparture;
+    document.querySelectorAll('.from')[0].innerHTML = selectedFrom;
+    document.querySelectorAll('.from')[1].innerHTML = selectedFrom;
+    document.querySelectorAll('.to')[0].innerHTML = selectedTo;
+    document.querySelectorAll('.to')[1].innerHTML = selectedTo;
+    document.querySelectorAll('.date')[0].innerHTML = date;
+    document.querySelectorAll('.date')[1].innerHTML = date;
+    document.querySelectorAll('.time')[0].innerHTML = selectedDeparture;
+    document.querySelectorAll('.time')[1].innerHTML = selectedDeparture;
+    document.querySelector('#price').innerHTML = "Gesamtpreis: " + sessionStorage.getItem("price");
 }
 
 insertInformation();
-modifyTime(document.querySelector('#time'));
+modifyTime(document.querySelectorAll('.time'));
 
 //input fields
 var fields = document.getElementsByTagName('input');
@@ -57,11 +65,13 @@ var way = sessionStorage.getItem("way");
 if (way === null || way === "oneWay")
 {
     document.querySelector('#oneWayRadio').checked = true;
+    document.querySelector('#way').innerHTML = "Hinfahrt";
     sessionStorage.setItem("way", "oneWay");
 }
 else
 {
     document.querySelector('#twoWayRadio').checked = true;
+    document.querySelector('#way').innerHTML = "Hin- & Rückfahrt";
     sessionStorage.setItem("way", "twoWay");
 }
 
@@ -69,11 +79,13 @@ var voyageClass = sessionStorage.getItem("class");
 if (voyageClass === null || voyageClass === "second")
 {
     document.querySelector('#secondClassRadio').checked = true;
+    document.querySelector('#class').innerHTML = "2. Klasse";
     sessionStorage.setItem("class", "second"); 
 }
 else
 {
     document.querySelector('#firstClassRadio').checked = true;
+    document.querySelector('#class').innerHTML = "1. Klasse";
     sessionStorage.setItem("class", "first");
 }
 
@@ -84,10 +96,11 @@ document.querySelector('#oneWayRadio').addEventListener("click", function() {
     var currentPrice = sessionStorage.getItem("price");
     currentPrice /= 2;
     currentPrice = (Math.round(currentPrice*10)/10).toFixed(2);
-    document.querySelector('#price').innerHTML = currentPrice;
+    document.querySelector('#price').innerHTML = "Gesamtpreis: " + currentPrice;
+    document.querySelector('#way').innerHTML = "Hinfahrt";
     sessionStorage.setItem("price", currentPrice);
     sessionStorage.setItem("way", "oneWay");
-})
+});
 
 document.querySelector('#twoWayRadio').addEventListener("click", function() {
     if (sessionStorage.getItem("way") === "twoWay")
@@ -96,10 +109,11 @@ document.querySelector('#twoWayRadio').addEventListener("click", function() {
     var currentPrice = sessionStorage.getItem("price");
     currentPrice *= 2;
     currentPrice = (Math.round(currentPrice*10)/10).toFixed(2);
-    document.querySelector('#price').innerHTML = currentPrice;
+    document.querySelector('#price').innerHTML = "Gesamtpreis: " + currentPrice;
+    document.querySelector('#way').innerHTML = "Hin- & Rückfahrt";
     sessionStorage.setItem("price", currentPrice);
     sessionStorage.setItem("way", "twoWay");
-})
+});
 
 document.querySelector('#firstClassRadio').addEventListener("click", function() {
     if (sessionStorage.getItem("class") === "first")
@@ -108,10 +122,11 @@ document.querySelector('#firstClassRadio').addEventListener("click", function() 
     var currentPrice = parseFloat(sessionStorage.getItem("price"));
     currentPrice += 5;
     currentPrice = (Math.round(currentPrice*10)/10).toFixed(2);
-    document.querySelector('#price').innerHTML = currentPrice;
+    document.querySelector('#price').innerHTML = "Gesamtpreis: " + currentPrice;
+    document.querySelector('#class').innerHTML = "1. Klasse";
     sessionStorage.setItem("price", currentPrice);
     sessionStorage.setItem("class", "first");
-})
+});
 
 document.querySelector('#secondClassRadio').addEventListener("click", function() {
     if (sessionStorage.getItem("class") === "second")
@@ -120,36 +135,8 @@ document.querySelector('#secondClassRadio').addEventListener("click", function()
     var currentPrice = parseFloat(sessionStorage.getItem("price"));
     currentPrice -= 5;
     currentPrice = (Math.round(currentPrice*10)/10).toFixed(2);
-    document.querySelector('#price').innerHTML = currentPrice;
+    document.querySelector('#price').innerHTML = "Gesamtpreis: " + currentPrice;
+    document.querySelector('#class').innerHTML = "2. Klasse";
     sessionStorage.setItem("price", currentPrice);
     sessionStorage.setItem("class", "second");
-})
-
-function adjustPrice(index)
-{
-    if (this.checked)
-    {
-        return;
-    }
-
-    var currentPrice = sessionStorage.getItem("price");
-
-    switch(index)
-    {
-        case 0:
-            currentPrice /= 2;
-            break;
-        case 1:
-            currentPrice *= 2;
-            break;
-        case 2:
-            currentPrice += 5;
-            break;
-        case 3:
-            currentPrice -= 5;
-            break;
-    }
-
-    sessionStorage.setItem("price", currentPrice);
-    document.querySelector('#price').innerHTML = currentPrice;
-}
+});

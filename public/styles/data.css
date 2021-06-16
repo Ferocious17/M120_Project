@@ -156,14 +156,14 @@ h3
     margin-right: 30%;
 }
 
-#personalData, #options, #credentials
+#discounts
 {
-    margin-bottom: 9%;
+    color: var(--text-color);
 }
 
-#houseNumberInput, #postalCodeInput
+#personalData, #options
 {
-    width: 50%;
+    margin-bottom: 9%;
 }
 
 aside
@@ -176,11 +176,65 @@ aside
     right: 0;
     z-index: 1;
     color: var(--text-color);
+    padding-top: 1%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     background: var(--input-background);
     border: 1px solid var(--text-color);
     border-radius: 13px;
     transition: all 0.3s ease;
+}
+
+#way
+{
+    font-weight: bold;
+    font-size: 33px;
+}
+
+#info
+{
+    margin-top: 6%;
+}
+
+#info > h1
+{
+    font-size: 24px;
+}
+
+#info > h3
+{
+    font-size: 19px;
+    text-align: center;
+}
+
+#class
+{
+    margin-top: 3%;
+    font-size: 23px;
+}
+
+hr
+{
+    width: 100%;
+    position: absolute;
+    bottom: 39%;
+}
+
+#price
+{
+    position: absolute;
+    bottom: 26%;
+    font-size: 26px;
+    font-weight: 300;
+}
+
+#buttons
+{
+    position: absolute;
+    bottom: 3%;
 }
 
 footer

@@ -46,24 +46,26 @@
     </header>
 
     <main>
-      <div id="steps">
-        <a class="hoverableLink" href="connections.html">1. Verbindung</a>
-        <i class="fa fa-angle-right"></i>
-        <a class="activeLink">2. Reisedaten</a>
-        <i class="fa fa-angle-right"></i>
-        <a class="disabledLink">3. Bezahlung</a>
-        <i class="fa fa-angle-right"></i>
-        <a class="disabledLink">4. Bestätigung</a>
-      </div>
+        <div id="steps">
+            <a class="hoverableLink" href="connections.html">1. Verbindung</a>
+            <i class="fa fa-angle-right"></i>
+            <a class="activeLink">2. Reisedaten</a>
+            <i class="fa fa-angle-right"></i>
+            <a class="disabledLink">3. Bezahlung</a>
+            <i class="fa fa-angle-right"></i>
+            <a class="disabledLink">4. Bestätigung</a>
+        </div>
 
-      <div id="connectionInfo">
-        <h1 id="fromH1"><span id="from"></span> <svg xmlns="http://www.w3.org/2000/svg" class="svg" viewBox="0 0 24 24" width="30" height="30">
-            <path fill="none" d="M0 0h24v24H0z" />
-            <path id="svgArrow" d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" />
-          </svg> <span id="to"></span></h1>
-        <h3 style="font-weight: 300;">Datum: <span id="date"></span> | Abfahrt: <span id="time"></span></h3>
-        <a href="../../public/index.html">Ändern</a>
-      </div>
+        <div id="connectionInfo">
+            <h1 id="fromH1"><span class="from"></span> <svg xmlns="http://www.w3.org/2000/svg" class="svg"
+                    viewBox="0 0 24 24" width="30" height="30">
+                    <path fill="none" d="M0 0h24v24H0z" />
+                    <path id="svgArrow"
+                        d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" />
+                </svg> <span class="to"></span></h1>
+            <h3 style="font-weight: 300;">Datum: <span class="date"></span> | Abfahrt: <span class="time"></span></h3>
+            <a href="../../public/index.html">Ändern</a>
+        </div>
 
         <div id="form">
             <h1>Reisende/r</h1>
@@ -76,7 +78,7 @@
                             <label for="firstnameInput">Vorname</label>
                             <div class="invalid-tooltip">
                                 Bitte geben Sie Ihren Vornamen ein
-                              </div>
+                            </div>
                         </div>
 
                         <div class="form-floating col-md">
@@ -84,30 +86,44 @@
                             <label for="lastnameInput">Nachname</label>
                             <div class="invalid-tooltip">
                                 Bitte geben Sie Ihren Nachnamen ein
-                              </div>
+                            </div>
                         </div>
                     </div>
 
                     <div class="row g-2 mb-3">
-                        <select id="discounts" name="discounts" multiple>
-                          <option value="noDiscount">Keine Ermässigung</option>
-                          <option value="halbtax">Halbtax</option>
-                          <option value="junior">Junior-Karte</option>
-                          <option value="child">Kinder-Karte</option>
-                        </select>
-                      
+                        <div id="discounts">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"
+                                    checked>
+                                <label class="form-check-label" for="inlineCheckbox1">Keine Ermässigung</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                <label class="form-check-label" for="inlineCheckbox2">Halbtax</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                                <label class="form-check-label" for="inlineCheckbox3">Junior-Karte</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                                <label class="form-check-label" for="inlineCheckbox3">Kinder-Karte</label>
+                            </div>
+                        </div>
+
                         <div class="form-floating col-md">
                             <input type="date" class="form-control" id="birthdateInput" placeholder="Geburtsdatum">
                             <label for="birthdateInput">Geburtsdatum</label>
                             <div class="invalid-tooltip">
                                 Bitte wählen Sie Ihr Geburtsdatum aus
-                              </div>
+                            </div>
                         </div>
                     </div>
 
                     <div id="buttons" class="g-2 mb-3">
-                      <button type="submit" class="btn btn-primary" id="addTravellerButton">Reisende/n hinzufügen</button>
-                  </div>
+                        <button type="submit" class="btn btn-primary" id="addTravellerButton">Reisende/n
+                            hinzufügen</button>
+                    </div>
                 </form>
             </div>
 
@@ -117,45 +133,60 @@
                 <div style="display: flex; justify-content: flex-start; align-items: center; width: 100%;">
                     <form style="margin-right: 9%;">
                         <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                          <input type="radio" class="btn-check" name="btnradio" id="oneWayRadio" autocomplete="off" checked>
-                          <label class="btn btn-outline-primary" for="oneWayRadio">Einfache Fahrt</label>
-                        
-                          <input type="radio" class="btn-check" name="btnradio" id="twoWayRadio" autocomplete="off">
-                          <label class="btn btn-outline-primary" for="twoWayRadio">Hin- & Rückfahrt</label> 
+                            <input type="radio" class="btn-check" name="btnradio" id="oneWayRadio" autocomplete="off"
+                                checked>
+                            <label class="btn btn-outline-primary" for="oneWayRadio">Einfache Fahrt</label>
+
+                            <input type="radio" class="btn-check" name="btnradio" id="twoWayRadio" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="twoWayRadio">Hin- & Rückfahrt</label>
                         </div>
-                      </form>
-      
-                      <form>
+                    </form>
+
+                    <form>
                         <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                          <input type="radio" class="btn-check" name="btnradio" id="firstClassRadio" autocomplete="off">
-                          <label class="btn btn-outline-primary" for="firstClassRadio">1. Klasse</label>
-                        
-                          <input type="radio" class="btn-check" name="btnradio" id="secondClassRadio" autocomplete="off" checked>
-                          <label class="btn btn-outline-primary" for="secondClassRadio">2. Klasse</label>
+                            <input type="radio" class="btn-check" name="btnradio" id="firstClassRadio"
+                                autocomplete="off">
+                            <label class="btn btn-outline-primary" for="firstClassRadio">1. Klasse</label>
+
+                            <input type="radio" class="btn-check" name="btnradio" id="secondClassRadio"
+                                autocomplete="off" checked>
+                            <label class="btn btn-outline-primary" for="secondClassRadio">2. Klasse</label>
                         </div>
-                      </form>
+                    </form>
                 </div>
             </div>
         </div>
     </main>
 
     <aside>
-        Info
+        <span id="way"></span>
+        <span id="class"></span>
 
-        <div id="price"></div>
+        <span id="info">
+            <h1><span class="from"></span> <svg xmlns="http://www.w3.org/2000/svg" class="svg"
+                    viewBox="0 0 24 24" width="30" height="30">
+                    <path fill="none" d="M0 0h24v24H0z" />
+                    <path id="svgArrow"
+                        d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" />
+                </svg> <span class="to"></span></h1>
+            <h3 style="font-weight: 300;">Datum: <span class="date"></span> | Abfahrt: <span class="time"></span></h3>
+        </span>
+
+        <span id="discounts"></span>
+
+        <hr>
+
+        <span id="price"></span>
 
         <div id="buttons" class="g-2 mb-3">
-            <button class="btn btn-primary" id="cancelButton">Abbrechen</button>
             <button type="submit" class="btn btn-primary" id="registerButton">Zur Kasse</button>
         </div>
     </aside>
-    
+
     <script src="../scripts/multiselect/src/jquery.multi-select.js"></script>
     <script>
-        //load price on load
-        document.querySelector('#price').innerHTML = sessionStorage.getItem("price");
-
         window.onscroll = function () { adjustHeader(); adjustAside(); };
+        document.querySelector('#info').style.display = "none";
 
         function adjustHeader() {
             if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
@@ -166,16 +197,19 @@
             }
         }
 
-        function adjustAside()
-        {
+        function adjustAside() {
             var aside = document.getElementsByTagName('aside')[0];
+            var voyageDisplayer = document.querySelector('#info');
+
             if (document.body.scrollTop > 180 || document.documentElement.scrollTop > 180) {
                 aside.style.height = "50%";
                 aside.style.top = "25%";
+                voyageDisplayer.style.display = "block";
             }
             else {
                 aside.style.height = "30%";
                 aside.style.top = "60%";
+                voyageDisplayer.style.display = "none";
             }
         }
 
